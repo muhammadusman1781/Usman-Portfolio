@@ -12,21 +12,28 @@ import {
 import { portfolioData } from "./data";
 import MUIButton from "../MUIButton";
 import Link from "next/link";
+import { portfolioData } from "./data";
 
-export default function AllProjects() {
+export default function AllProjects({
+  filter = 'All',
+}: {
+  filter?: 'All' | 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual';
+}) {
   const theme = useTheme();
+
+  const list =
+    filter === 'All'
+      ? portfolioData
+      : portfolioData.filter(p => (p as any).tags?.includes(filter));
+
   return (
     <Box>
       <Grid container spacing={2}>
-        {portfolioData.map((val, index) => {
+        {list.map((val, index) => {
           return (
-            <Grid item md={4} sx={{ width: "100%" }}>
+            <Grid item md={4} sx={{ width: "100%" }} key={val.id ?? index}>
               <Card sx={{ borderRadius: "20px", position: "relative" }}>
-                <Box
-                  sx={{
-                    padding: "30px",
-                  }}
-                >
+                <Box sx={{ padding: "30px" }}>
                   <Link href={`/portfolio/${index + 1}`}>
                     <CardMedia
                       sx={{
@@ -36,51 +43,19 @@ export default function AllProjects() {
                         transition: "transform 0.4s",
                         backgroundSize: "cover",
                         overflow: "hidden",
-                        "&:hover": {
-                          transform: "scale(1.05, 1.05)",
-                        },
+                        "&:hover": { transform: "scale(1.05, 1.05)" },
                       }}
                       image={`${val.images[0]}`}
-                      title="green iguana"
+                      title={val.name}
                     />
                   </Link>
                 </Box>
                 <CardContent sx={{ px: "30px", py: 2 }}>
-                  {/* <Box
-                    sx={{
-                      fontSize: "14px",
-                      color: theme.palette.primary.main,
-                      py: 1,
-                      fontWeight: 600,
-                    }}
-                  >
-                    {val.name}
-                  </Box> */}
-                  <Typography
-                    sx={{
-                      fontSize: "22px",
-                      fontWeight: 500,
-                    }}
-                  >
+                  <Typography sx={{ fontSize: "22px", fontWeight: 500 }}>
                     {val.name}
                   </Typography>
-                  {/* <Typography
-                    sx={{
-                      fontWeight: 400,
-                      fontSize: "16px",
-                      pt: 1,
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore.
-                  </Typography> */}
                 </CardContent>
-                <CardActions
-                  sx={{
-                    position: "relative",
-                    px: "30px",
-                  }}
-                >
+                <CardActions sx={{ position: "relative", px: "30px" }}>
                   <Link href={`/portfolio/${index + 1}`}>
                     <MUIButton>View</MUIButton>
                   </Link>
@@ -104,3 +79,4 @@ export default function AllProjects() {
     </Box>
   );
 }
+
