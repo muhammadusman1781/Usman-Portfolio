@@ -11,6 +11,29 @@ import { useRouter } from "next/router";
 import Loader from "../Loader";
 import { portfolioData, Tag } from '../PortfolioSection/data';
 
+// --- add these helpers (local) ---
+type MaybeTag = string | Tag;
+
+const normalizeStringToTag = (s: string): Tag | null => {
+  const up = s.trim().toUpperCase();
+  if (up === "AR") return "AR";
+  if (up === "VR") return "VR";
+  if (up === "MULTIPLAYER") return "Multiplayer";
+  if (up === "HYPERCASUAL") return "Hypercasual";
+  return null;
+};
+
+const toTagArray = (arr?: readonly MaybeTag[]): Tag[] =>
+  (arr ?? [])
+    .map(t => (typeof t === "string" ? normalizeStringToTag(t) : t))
+    .filter((t): t is Tag => !!t);
+
+const overlap = (a?: readonly MaybeTag[], b?: readonly MaybeTag[]) => {
+  const A = toTagArray(a);
+  const B = toTagArray(b);
+  return A.some(t => B.includes(t));
+};
+
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
@@ -32,11 +55,10 @@ interface Project {
   images: string[];
   description?: string;
   playstore?: string;
-  tags?: Tag[]; // <-- was string[] or implicit string; fix to Tag[]
+  tags?: MaybeTag[]; // accept string[] or Tag[]
 }
-const overlap = (a: Tag[] = [], b: Tag[] = []) => a.some(t => b.includes(t));
 export default function PortfolioByIdSection({ data }: { data: Project }) {
-  const similar = portfolioData
+   const similar = portfolioData
     .filter(p => p.name !== data?.name && overlap(p.tags, data?.tags))
     .slice(0, 6);
 
