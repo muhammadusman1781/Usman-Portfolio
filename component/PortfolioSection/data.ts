@@ -1,3 +1,12 @@
+export type PortfolioItem = {
+  id: number;
+  name: string;
+  images: string[];
+  videoUrl?: string;
+  description?: string;
+  playstore?: string;
+  tags: Array<'AR' | 'VR' | 'Multiplayer' | 'Hypercasual'>; // <-- NEW
+};
 export const portfolioData = [
   {
     name: "Tarneeb Masters",
@@ -32,7 +41,7 @@ export const portfolioData = [
       "https://play-lh.googleusercontent.com/SCUshbHdmZpnGaMP3JMvCK2mwQxIWJ8EDiI9JQMoIhw0jWEY1jPKwkthdakXQS-IbtU=w2560-h1440-rw",
       "https://play-lh.googleusercontent.com/u7aocR9FjCoClsJJES90XH2Ko8U5Gh6-FFGxiutC5PPWpZYs7d6pSmdGBU_nMesbZ8n9=w2560-h1440-rw",
     ],
-    tags: Array<'AR'>
+   tags: ["VR"]
   },
   {
     name: "Aramco F1 Paddock",
@@ -70,7 +79,7 @@ export const portfolioData = [
       // "/assets/images/portfolio/paddock/4.png",
       "/assets/images/portfolio/paddock/5.png",
     ],
-    tags: Array<'AR'>
+    tags: ["VR"]
   },
   {
     name: "Markad Racing",
@@ -109,7 +118,7 @@ export const portfolioData = [
       "https://play-lh.googleusercontent.com/GvTKj3NSQ9OvRDnt6k1KIj2VFPVeraEMUUoL1_QvDowsCzEElyUQiNjoqy-Dr1NCJRSV=w5120-h2880",
       "https://play-lh.googleusercontent.com/FxtZMpppWyv8BNzWvTVmam5U-MVpBUfG98ZzsPtZl8bigPgxA8A8_Ksompg2IjREDbxx=w5120-h2880",
     ],
-    tags: Array<'VR'>
+   tags: ["AR"]
   },
   {
     name: "Battle Royale",
