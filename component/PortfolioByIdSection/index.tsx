@@ -10,7 +10,6 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { portfolioData } from "../PortfolioSection/data";
 import Loader from "../Loader";
-import { portfolioData } from "../PortfolioSection/data";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
