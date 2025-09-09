@@ -1,0 +1,35 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@font-face {
+    font-family: "Jost";
+    src: url('/assets/fonts/Jost/Jost.woff2');
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url('/assets/fonts/Caveat/Caveat.ttf');
+}
+
+html,
+body {
+    /* ... */
+    font-family: 'Jost', sans-serif;
+}
+
+.swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden {
+    padding-top: 0px;
+    padding-bottom: 50px;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: #29a587;
+    padding: 5px;
+}
+
+span.swiper-pagination-bullet {
+    transition: 300ms opacity;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #000;
+}
