@@ -29,7 +29,7 @@ export default function CustomThemeProvider({ children }: any) {
         palette: {
           mode,
           primary: {
-            light: "#FCD9B8",
+            light: "#FCD9B9",
             main: "#292C35",
             dark: "#17181D",
             contrastText: "#E09145",
