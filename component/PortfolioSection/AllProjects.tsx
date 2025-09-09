@@ -13,18 +13,17 @@ import { portfolioData } from "./data";
 import MUIButton from "../MUIButton";
 import Link from "next/link";
 import { portfolioData } from "./data";
+import { portfolioData, Tag } from './data';
 
 export default function AllProjects({
-  filter = 'All',
+ filter = 'All',
 }: {
-  filter?: 'All' | 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual';
+  filter?: 'All' | Tag; // <-- use Tag here
 }) {
-  const theme = useTheme();
-
   const list =
     filter === 'All'
       ? portfolioData
-      : portfolioData.filter(p => (p as any).tags?.includes(filter));
+      : portfolioData.filter(p => p.tags?.includes(filter as Tag));
 
   return (
     <Box>

@@ -4,6 +4,8 @@ import { section } from "../Style";
 import PortfolioTabs from "./PortfolioTabs";
 import AllProjects from "./AllProjects";
 import { useState } from "react";
+import { Tag } from './data';
+const [filter, setFilter] = useState<'All' | Tag>('All');
 export default function PortfolioSection() {
   const [filter, setFilter] =
     useState<'All' | 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual'>('All');

@@ -1,3 +1,5 @@
+export type Tag = 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual';
+
 export type PortfolioItem = {
   id: number;
   name: string;
@@ -5,7 +7,7 @@ export type PortfolioItem = {
   videoUrl?: string;
   description?: string;
   playstore?: string;
-  tags: Array<'AR' | 'VR' | 'Multiplayer' | 'Hypercasual'>; // <-- NEW
+tags: Tag[]; // <-- make tags use Tag[]
 };
 export const portfolioData = [
   {

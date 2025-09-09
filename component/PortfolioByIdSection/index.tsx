@@ -10,6 +10,8 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { portfolioData } from "../PortfolioSection/data";
 import Loader from "../Loader";
+import { portfolioData, Tag } from '../PortfolioSection/data';
+
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
@@ -25,21 +27,19 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 interface Project {
+  id?: number | string;
   name: string;
-  videoUrl: string;
+  videoUrl?: string;
   images: string[];
-  description: string;
-  playstore: string;
-  tags?: Array<'AR' | 'VR' | 'Multiplayer' | 'Hypercasual'>; // <-- NEW
+  description?: string;
+  playstore?: string;
+  tags?: Tag[]; // <-- was string[] or implicit string; fix to Tag[]
 }
-
+const overlap = (a: Tag[] = [], b: Tag[] = []) => a.some(t => b.includes(t));
 export default function PortfolioByIdSection({ data }: { data: Project }) {
   const similar = portfolioData
-    .filter(p =>
-      p.name !== data?.name &&
-      p.tags?.some(t => data?.tags?.includes(t))
-    )
-    .slice(0, 6); // show up to 6
+    .filter(p => p.name !== data?.name && overlap(p.tags, data?.tags))
+    .slice(0, 6);
 
   return (
     <Box id="portfolio" component="section" sx={section}>
