@@ -58,8 +58,9 @@ interface Project {
   tags?: MaybeTag[]; // accept string[] or Tag[]
 }
 export default function PortfolioByIdSection({ data }: { data: Project }) {
-   const similar = portfolioData
-    .filter(p => p.name !== data?.name && overlap(p.tags, data?.tags))
+  const similar = portfolioData
+    .map((p, idx) => ({ ...p, id: idx + 1 }))
+    .filter((p) => p.name !== data?.name && overlap(p.tags, data?.tags))
     .slice(0, 6);
 
   return (
