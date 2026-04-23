@@ -1,4 +1,10 @@
-export type Tag = 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual';
+export type Tag =
+  | "AR"
+  | "VR"
+  | "Multiplayer"
+  | "Hypercasual"
+  | "Educational"
+  | "Casino";
 
 export type PortfolioItem = {
   id: number;
@@ -43,7 +49,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/SCUshbHdmZpnGaMP3JMvCK2mwQxIWJ8EDiI9JQMoIhw0jWEY1jPKwkthdakXQS-IbtU=w2560-h1440-rw",
       "https://play-lh.googleusercontent.com/u7aocR9FjCoClsJJES90XH2Ko8U5Gh6-FFGxiutC5PPWpZYs7d6pSmdGBU_nMesbZ8n9=w2560-h1440-rw",
     ],
-   tags: ["VR"]
+    tags: ["Multiplayer"],
   },
   {
     name: "Aramco F1 Paddock",
@@ -81,7 +87,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       // "/assets/images/portfolio/paddock/4.png",
       "/assets/images/portfolio/paddock/5.png",
     ],
-    tags: ["VR"]
+    tags: ["AR"],
   },
   {
     name: "Markad Racing",
@@ -120,7 +126,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/GvTKj3NSQ9OvRDnt6k1KIj2VFPVeraEMUUoL1_QvDowsCzEElyUQiNjoqy-Dr1NCJRSV=w5120-h2880",
       "https://play-lh.googleusercontent.com/FxtZMpppWyv8BNzWvTVmam5U-MVpBUfG98ZzsPtZl8bigPgxA8A8_Ksompg2IjREDbxx=w5120-h2880",
     ],
-   tags: ["AR"]
+    tags: ["Multiplayer"],
   },
   {
     name: "Battle Royale",
@@ -156,6 +162,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/battleroyal/3.png",
       "/assets/images/portfolio/battleroyal/4.png",
     ],
+    tags: ["Multiplayer"],
   },
   {
     name: "Kynect Game",
@@ -194,6 +201,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/kynect/3.jpg",
       "/assets/images/portfolio/kynect/4.jpg",
     ],
+    tags: ["Educational"],
   },
 
   {
@@ -231,38 +239,9 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/kaizilla/3.png",
       "/assets/images/portfolio/kaizilla/4.png",
     ],
+    tags: ["Multiplayer"],
   },
-  {
-    name: "Speed Superhero Game",
-    videoUrl: "https://www.youtube.com/watch?v=bWkpJofVLVM&t=121s",
-    playstore: "",
-
-    description: `
-               Speed superhero lightning game is a single player role playing game. It contains multiple modes and levels of rescuing people and having fun in the game
-
-        <br/>
-        <br/>
-        <strong>Features:</strong>
-        <ul>
-        <li>Single Player</li>
-        <li>Rescue missions </li>
-        <li>Flash Speed</li>
-        <li>Flying controller</li>
-        <li>Fighting controller</li>
-        </ul>
-
-        <strong>Technologies Stacks:</strong>
-        <ul>
-            <li>Unity Engine</li>
-            <li>C#</li>
-        </ul>`,
-    images: [
-      "https://play-lh.googleusercontent.com/2fyce8PP505NiB9pu9ihsd5G_8Ftf-P6w8jawhd6n6P245SX3PCo6EVQtNs1b_oDFIaH=w5120-h2880",
-      "https://play-lh.googleusercontent.com/_4xZK1lscKt9RAjyUHoZ23sAtWSImTWC2-AkwVCtr8fj1VfUeXcRIBx2s_YOUHCW3mo=w5120-h2880",
-      "https://play-lh.googleusercontent.com/ehkywVq6x2OLbGLW43mzcQjCE-VpIH2hrfSGTHRbb6945EjWb-9VzObZNDpG2_8dYA=w5120-h2880",
-      "https://play-lh.googleusercontent.com/sEk8ek0fD6VDdveChpkJApfX7_bxZrkw9I-Djq8Y9Ff6hNcBODEFr4ODc5f4CkmSLc4=w5120-h2880",
-    ],
-  },
+  // Speed Superhero Game is hidden for now.
   {
     name: "Parchisking Game",
     videoUrl: "https://youtu.be/S00TLA2y0bM",
@@ -298,6 +277,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/parchisking/4.jpg",
       // "/assets/images/portfolio/parchisking/5.jpg",
     ],
+    tags: ["Multiplayer"],
   },
   {
     name: "Boat Merge Game",
@@ -340,6 +320,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/boatmerge/3.jpg",
       // "/assets/images/portfolio/parchisking/5.jpg",
     ],
+    tags: ["Hypercasual"],
   },
   {
     name: "Drift Car Parking",
@@ -380,6 +361,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/cardrift/4.jpg",
       // "/assets/images/portfolio/parchisking/5.jpg",
     ],
+    tags: ["Hypercasual"],
   },
   {
     name: "Brandweer Training",
@@ -417,6 +399,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/brandweer/4.png",
       // "/assets/images/portfolio/brandweer/5.png",
     ],
+    tags: ["VR"],
   },
   {
     name: "Star Burst Slot Game",
@@ -450,6 +433,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/starburst/4.jpg",
       // "/assets/images/portfolio/brandweer/5.png",
     ],
+    tags: ["Casino"],
   },
 ];
 

@@ -12,19 +12,19 @@ import Link from "next/link";
 import { portfolioDataWithId, Tag } from "./data";
 
 export default function AllProjects({
- filter = 'All',
+  filter = "All",
 }: {
-  filter?: 'All' | Tag; // <-- use Tag here
+  filter?: "All" | Tag;
 }) {
   const list =
     filter === "All"
       ? portfolioDataWithId
-      : portfolioDataWithId.filter((p) => p.tags?.includes(filter as Tag));
+      : portfolioDataWithId.filter((p) => p.tags?.includes(filter));
 
   return (
     <Box>
       <Grid container spacing={2}>
-        {list.map((val, index) => {
+        {list.map((val) => {
           return (
             <Grid item md={4} sx={{ width: "100%" }} key={val.id}>
               <Card sx={{ borderRadius: "20px", position: "relative" }}>

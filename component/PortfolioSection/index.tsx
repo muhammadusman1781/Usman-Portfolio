@@ -9,7 +9,7 @@ import { Tag } from "./data";
 export default function PortfolioSection() {
   const [filter, setFilter] = useState<"All" | Tag>("All");
 
-  const btn = (label: 'AR' | 'VR' | 'Multiplayer' | 'Hypercasual') => (
+  const btn = (label: Tag) => (
     <Box
       component="button"
       onClick={() => setFilter(label)}
@@ -48,6 +48,8 @@ export default function PortfolioSection() {
           {btn("AR")}
           {btn("Multiplayer")}
           {btn("Hypercasual")}
+          {btn("Educational")}
+          {btn("Casino")}
         </Box>
 
         <Box sx={{ py: 5 }}>

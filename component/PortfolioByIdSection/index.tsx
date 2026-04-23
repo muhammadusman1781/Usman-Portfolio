@@ -21,6 +21,8 @@ const normalizeStringToTag = (s: string): Tag | null => {
   if (up === "VR") return "VR";
   if (up === "MULTIPLAYER") return "Multiplayer";
   if (up === "HYPERCASUAL") return "Hypercasual";
+  if (up === "EDUCATIONAL" || up === "EDUCATIONAL GAMES") return "Educational";
+  if (up === "CASINO" || up === "CASINO GAMES") return "Casino";
   return null;
 };
 
