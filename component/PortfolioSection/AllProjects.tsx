@@ -1,19 +1,15 @@
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Grid,
   Typography,
-  useTheme,
 } from "@mui/material";
-import { portfolioData } from "./data";
 import MUIButton from "../MUIButton";
 import Link from "next/link";
-import { portfolioData } from "./data";
-import { portfolioData, Tag } from './data';
+import { portfolioData, Tag } from "./data";
 
 export default function AllProjects({
  filter = 'All',
