@@ -111,7 +111,7 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
                     <Link href={`/portfolio/${p.id}`}>
                       <Box
                         component="img"
-                        src={p.images[0]}
+                        src={p.images?.[0] || "/assets/images/home/dot.png"}
                         sx={{ width: "100%", height: 200, objectFit: "cover", borderRadius: "16px" }}
                       />
                       <Typography sx={{ mt: 1, fontWeight: 600 }}>{p.name}</Typography>

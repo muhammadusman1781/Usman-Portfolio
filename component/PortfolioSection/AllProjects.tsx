@@ -40,7 +40,7 @@ export default function AllProjects({
                         overflow: "hidden",
                         "&:hover": { transform: "scale(1.05, 1.05)" },
                       }}
-                      image={`${val.images[0]}`}
+                      image={val.images?.[0] || "/assets/images/home/dot.png"}
                       title={val.name}
                     />
                   </Link>

@@ -397,6 +397,106 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
     tags: ["Hypercasual"],
   },
   {
+    name: "Quess",
+    videoUrl: "https://youtu.be/vytwOJVBlnY",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Quess is a 4-player multiplayer chess game built on an extended chess board with custom rules and advanced gameplay systems. The game supports competitive online play, hotseat mode for local sessions, and private rooms for friend matches, offering a unique chess experience beyond traditional formats.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>4-Player Chess Battles:</strong> Play strategic chess matches with up to four players.</li>
+        <li><strong>Extended Chess Board:</strong> Includes a larger custom board layout for deeper gameplay.</li>
+        <li><strong>Custom Rule System:</strong> Enhanced rule set designed for unique game flow and balance.</li>
+        <li><strong>Hotseat Mode:</strong> Supports local turn-based play on a single device.</li>
+        <li><strong>Private Rooms:</strong> Create and join private rooms to play with friends.</li>
+        <li><strong>Multiplayer Matchmaking:</strong> Built for smooth online competitive sessions.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+            <li>Photon PUN</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/quess/1.png",
+      "/assets/images/portfolio/quess/2.png",
+      "/assets/images/portfolio/quess/3.png",
+      "/assets/images/portfolio/quess/4.png",
+    ],
+    tags: ["Multiplayer"],
+  },
+  {
+    name: "Checkers",
+    videoUrl: "https://youtu.be/KcUEhDsmxXA",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Checkers is a 4-player multiplayer checkers game featuring an extended board and custom rules for richer strategic gameplay. Similar to Quess, it supports online matches, hotseat sessions, and private room play, delivering a social and competitive board-game experience.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>4-Player Checkers Matches:</strong> Compete with up to four players in each game.</li>
+        <li><strong>Extended Board Design:</strong> Larger board configuration for expanded tactics.</li>
+        <li><strong>Custom Rule System:</strong> Tailored gameplay rules for a unique checkers experience.</li>
+        <li><strong>Hotseat Mode:</strong> Local multiplayer support on the same device.</li>
+        <li><strong>Private Rooms:</strong> Host and join private games with friends.</li>
+        <li><strong>Realtime Multiplayer:</strong> Online connectivity for smooth competitive play.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+            <li>Photon PUN</li>
+        </ul>`,
+    images: [],
+    tags: ["Multiplayer"],
+  },
+  {
+    name: "Backgammon",
+    videoUrl: "https://youtu.be/r86Kj73jY4Y",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Backgammon is a 4-player multiplayer board game with a custom board design and custom rules to create a fresh gameplay style. Like Quess, it includes online multiplayer, hotseat support, and private rooms, making it ideal for both casual and competitive players.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>4-Player Backgammon:</strong> Engage in multiplayer matches with four participants.</li>
+        <li><strong>Custom Board Setup:</strong> Designed with a unique board layout and interactions.</li>
+        <li><strong>Custom Rule Variants:</strong> Rule adjustments for deeper and more dynamic strategy.</li>
+        <li><strong>Hotseat Mode:</strong> Play locally with pass-and-play mechanics.</li>
+        <li><strong>Private Rooms:</strong> Create private lobbies for friend-only matches.</li>
+        <li><strong>Online Multiplayer:</strong> Reliable networking for live competitive games.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+            <li>Photon PUN</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/backgammon/1.png",
+      "/assets/images/portfolio/backgammon/2.png",
+      "/assets/images/portfolio/backgammon/3.png",
+      "/assets/images/portfolio/backgammon/4.png",
+    ],
+    tags: ["Multiplayer"],
+  },
+  {
     name: "Brandweer Training",
     videoUrl: "https://www.youtube.com/watch?v=F16Bbyb9QNQ",
     playstore: "",
