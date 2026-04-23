@@ -389,10 +389,10 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
             <li>C#</li>
         </ul>`,
     images: [
-      "/assets/images/portfolio/tapfast/1.jpg",
-      "/assets/images/portfolio/tapfast/2.jpg",
-      "/assets/images/portfolio/tapfast/3.jpg",
-      "/assets/images/portfolio/tapfast/4.jpg",
+      "/assets/images/portfolio/tapfast/1.png",
+      "/assets/images/portfolio/tapfast/2.png",
+      "/assets/images/portfolio/tapfast/3.png",
+      "/assets/images/portfolio/tapfast/4.png",
     ],
     tags: ["Hypercasual"],
   },
