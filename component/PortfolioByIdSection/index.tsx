@@ -1,15 +1,11 @@
-import { useEffect, useState } from "react";
 import parse from "html-react-parser";
 
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { section } from "../Style";
-import Grid2 from "@mui/material/Unstable_Grid2";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Loader from "../Loader";
 import { portfolioDataWithId, Tag } from "../PortfolioSection/data";
 
 // --- add these helpers (local) ---
@@ -67,14 +63,32 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
 
   return (
     <Box id="portfolio" component="section" sx={section}>
-      <Container>
-        {/* ...existing content... */}
+      <Container sx={{ pt: { xs: 12, md: 16 } }}>
+        <Typography
+          variant="h4"
+          sx={{ mb: 3, fontSize: { xs: "28px", md: "36px" }, fontWeight: 700 }}
+        >
+          {data?.name}
+        </Typography>
 
-        {/* Description */}
+        {/* Video */}
+        {data?.videoUrl && (
+          <Box sx={{ borderRadius: "16px", overflow: "hidden", mb: 3 }}>
+            <ReactPlayer url={data.videoUrl} controls width="100%" />
+          </Box>
+        )}
+
+        {/* Images + Description */}
         <Grid container spacing={3}>
           {data?.images?.map((val, index) => (
             <Grid item md={3} xs={12} key={index}>
-              <Box component="img" src={val} width={"100%"} height={"100%"} sx={{ objectFit: "cover", borderRadius: "16px" }} />
+              <Box
+                component="img"
+                src={val}
+                width={"100%"}
+                height={"100%"}
+                sx={{ objectFit: "cover", borderRadius: "16px" }}
+              />
             </Grid>
           ))}
           <Grid item md={12} py={3}>
