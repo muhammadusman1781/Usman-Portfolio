@@ -497,6 +497,107 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
     tags: ["Multiplayer"],
   },
   {
+    name: "Killer Pool",
+    videoUrl: "https://www.youtube.com/watch?v=v6yhu-Z4rH0",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Killer Pool is a multiplayer pool game developed with competitive online gameplay at its core. Built using Photon Fusion, it supports realtime match sessions and includes crypto wallet integrations where players can participate using real money, creating a high-stakes and skill-based experience.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>Realtime Multiplayer Pool:</strong> Play live online pool matches against other players.</li>
+        <li><strong>Photon Fusion Networking:</strong> Smooth and responsive multiplayer gameplay architecture.</li>
+        <li><strong>Crypto Wallet Integration:</strong> Wallet connection support for player transactions.</li>
+        <li><strong>Real Money Gameplay:</strong> Competitive sessions where real money can be used to play.</li>
+        <li><strong>Competitive Match Flow:</strong> Built for skill-based play and high engagement.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+            <li>Photon Fusion</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/killerpool/1.png",
+      "/assets/images/portfolio/killerpool/2.png",
+      "/assets/images/portfolio/killerpool/3.png",
+      "/assets/images/portfolio/killerpool/4.png",
+    ],
+    tags: ["Multiplayer", "Casino"],
+  },
+  {
+    name: "VR Car",
+    videoUrl: "https://www.youtube.com/watch?v=Z3jBOqQpG24",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              VR Car is a demonstration project focused on car sensor visualization and 3D graph-based data understanding in virtual reality. The experience presents practical knowledge through interactive scenes and ends with a question-based assessment to validate user understanding.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>Car Sensor Demonstrations:</strong> Showcases key sensor concepts in an immersive VR setup.</li>
+        <li><strong>3D Graph Visualizations:</strong> Displays data and behavior using interactive spatial graphs.</li>
+        <li><strong>Knowledge Demonstration Flow:</strong> Structured as a practical learning-oriented experience.</li>
+        <li><strong>Final Question Round:</strong> Includes end-of-session questions to check user understanding.</li>
+        <li><strong>Meta Quest Support:</strong> Designed for Meta Quest 2 and Meta Quest 3.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/vrcar/1.png",
+      "/assets/images/portfolio/vrcar/2.png",
+      "/assets/images/portfolio/vrcar/3.png",
+      "/assets/images/portfolio/vrcar/4.png",
+    ],
+    tags: ["VR", "Educational"],
+  },
+  {
+    name: "Fire fighters StormStick",
+    videoUrl: "https://youtube.com/shorts/hsRo84LWtP8",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Fire fighters StormStick is a VR training project that teaches firefighters how to use a storm stick after fire drills or real incident scenarios. Built as a focused training simulation and completed in just two days, the project delivers a practical and immersive learning workflow for field readiness.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>Storm Stick Usage Training:</strong> Guided VR practice for correct storm stick handling.</li>
+        <li><strong>Firefighter Drill Context:</strong> Training designed for post-drill and real-experience preparation.</li>
+        <li><strong>Scenario-Based Learning:</strong> Practical interaction flow to improve operational confidence.</li>
+        <li><strong>Immersive VR Delivery:</strong> Built for realistic engagement in virtual training spaces.</li>
+        <li><strong>Fast Development Cycle:</strong> Complete training project delivered in 2 days.</li>
+        <li><strong>Meta Quest Support:</strong> Runs on Meta Quest 2 and Meta Quest 3.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/vrstormstick/1.png",
+      "/assets/images/portfolio/vrstormstick/2.png",
+      "/assets/images/portfolio/vrstormstick/3.png",
+      "/assets/images/portfolio/vrstormstick/4.png",
+    ],
+    tags: ["VR", "Educational"],
+  },
+  {
     name: "Brandweer Training",
     videoUrl: "https://www.youtube.com/watch?v=F16Bbyb9QNQ",
     playstore: "",
