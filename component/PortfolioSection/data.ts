@@ -364,6 +364,39 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
     tags: ["Hypercasual"],
   },
   {
+    name: "Tap Fast",
+    videoUrl: "https://www.youtube.com/watch?v=RF4ZHaYVCWw",
+    playstore: "",
+
+    description: `
+         <strong>Description:</strong>
+         <br/>
+              Tap Fast is a time-based hypercasual game focused on reaction speed and precision. Players must tap buttons in the exact sequence shown on screen before the timer runs out. As the game progresses, the pace increases and the available time gets shorter, creating an intense challenge that rewards focus, memory, and quick decision-making.
+        <br/>
+        <br/>
+        <strong>Features:</strong>
+        <ul>
+        <li><strong>Sequence-Based Tapping:</strong> Follow and tap the exact button order shown above.</li>
+        <li><strong>Time Pressure Gameplay:</strong> Complete each sequence before the countdown ends.</li>
+        <li><strong>Increasing Difficulty:</strong> The game gets faster over time with less room for error.</li>
+        <li><strong>Hypercasual Design:</strong> Easy to learn controls with highly replayable gameplay.</li>
+        <li><strong>Reaction and Focus Training:</strong> Improves hand-eye coordination and speed.</li>
+        </ul>
+
+        <strong>Technologies Stacks:</strong>
+        <ul>
+            <li>Unity Engine</li>
+            <li>C#</li>
+        </ul>`,
+    images: [
+      "/assets/images/portfolio/tapfast/1.jpg",
+      "/assets/images/portfolio/tapfast/2.jpg",
+      "/assets/images/portfolio/tapfast/3.jpg",
+      "/assets/images/portfolio/tapfast/4.jpg",
+    ],
+    tags: ["Hypercasual"],
+  },
+  {
     name: "Brandweer Training",
     videoUrl: "https://www.youtube.com/watch?v=F16Bbyb9QNQ",
     playstore: "",
