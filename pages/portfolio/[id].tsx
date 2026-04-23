@@ -5,36 +5,21 @@ import { useRouter } from "next/router";
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
 import PortfolioByIdSection from "../../component/PortfolioByIdSection";
-import { portfolioData } from "../../component/PortfolioSection/data";
+import { portfolioDataWithId, PortfolioItem } from "../../component/PortfolioSection/data";
 import Loader from "../../component/Loader";
 
 export default function PortfolioById() {
   const router = useRouter();
-  const [project, setProject] = useState<{
-    name: string;
-    videoUrl: string;
-    images: string[];
-    playstore: string;
-    description: string;
-  }>({
-    name: "",
-    videoUrl: "",
-    images: [],
-    playstore: "",
-    description: "",
-  });
+  const [project, setProject] = useState<PortfolioItem | null>(null);
   const [loader, setLoader] = useState(true);
   const { id } = router.query;
-  const fetchDetails = () => {
-    if (id) {
-      let pid: any = id;
-      const data = portfolioData[pid - 1];
-      setProject(data);
-      setLoader(false);
-    }
-  };
+
   useEffect(() => {
-    fetchDetails();
+    if (!id) return;
+    const pid = Number(id);
+    const data = portfolioDataWithId.find((item) => item.id === pid) || null;
+    setProject(data);
+    setLoader(false);
   }, [id]);
   return (
     <>
@@ -46,7 +31,7 @@ export default function PortfolioById() {
       </Head>
       {loader ? <Loader /> : ""}
       <Header />
-      <PortfolioByIdSection data={project} />
+      {project && <PortfolioByIdSection data={project} />}
       <Footer />
     </>
   );

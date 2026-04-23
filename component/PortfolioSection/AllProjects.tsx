@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MUIButton from "../MUIButton";
 import Link from "next/link";
-import { portfolioData, Tag } from "./data";
+import { portfolioDataWithId, Tag } from "./data";
 
 export default function AllProjects({
  filter = 'All',
@@ -17,19 +17,19 @@ export default function AllProjects({
   filter?: 'All' | Tag; // <-- use Tag here
 }) {
   const list =
-    filter === 'All'
-      ? portfolioData
-      : portfolioData.filter(p => p.tags?.includes(filter as Tag));
+    filter === "All"
+      ? portfolioDataWithId
+      : portfolioDataWithId.filter((p) => p.tags?.includes(filter as Tag));
 
   return (
     <Box>
       <Grid container spacing={2}>
         {list.map((val, index) => {
           return (
-            <Grid item md={4} sx={{ width: "100%" }} key={val.id ?? index}>
+            <Grid item md={4} sx={{ width: "100%" }} key={val.id}>
               <Card sx={{ borderRadius: "20px", position: "relative" }}>
                 <Box sx={{ padding: "30px" }}>
-                  <Link href={`/portfolio/${index + 1}`}>
+                  <Link href={`/portfolio/${val.id}`}>
                     <CardMedia
                       sx={{
                         height: 240,
@@ -51,7 +51,7 @@ export default function AllProjects({
                   </Typography>
                 </CardContent>
                 <CardActions sx={{ position: "relative", px: "30px" }}>
-                  <Link href={`/portfolio/${index + 1}`}>
+                  <Link href={`/portfolio/${val.id}`}>
                     <MUIButton>View</MUIButton>
                   </Link>
                   <Box

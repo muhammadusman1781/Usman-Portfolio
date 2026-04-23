@@ -7,9 +7,9 @@ export type PortfolioItem = {
   videoUrl?: string;
   description?: string;
   playstore?: string;
-tags: Tag[]; // <-- make tags use Tag[]
+  tags?: Tag[];
 };
-export const portfolioData = [
+export const portfolioData: Omit<PortfolioItem, "id">[] = [
   {
     name: "Tarneeb Masters",
     videoUrl: "https://www.youtube.com/watch?v=sXrJRbCA7vE",
@@ -452,3 +452,10 @@ export const portfolioData = [
     ],
   },
 ];
+
+export const portfolioDataWithId: PortfolioItem[] = portfolioData.map(
+  (item, index) => ({
+    ...item,
+    id: index + 1,
+  })
+);

@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Loader from "../Loader";
-import { portfolioData, Tag } from '../PortfolioSection/data';
+import { portfolioDataWithId, Tag } from "../PortfolioSection/data";
 
 // --- add these helpers (local) ---
 type MaybeTag = string | Tag;
@@ -59,8 +59,7 @@ interface Project {
   tags?: MaybeTag[]; // accept string[] or Tag[]
 }
 export default function PortfolioByIdSection({ data }: { data: Project }) {
-  const similar = portfolioData
-    .map((p, idx) => ({ ...p, id: idx + 1 }))
+  const similar = portfolioDataWithId
     .filter((p) => p.name !== data?.name && overlap(p.tags, data?.tags))
     .slice(0, 6);
 
