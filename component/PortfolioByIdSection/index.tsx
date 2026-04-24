@@ -108,15 +108,24 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
               {similar.map((p, i) => (
                 <Grid item md={4} xs={12} key={p.id ?? p.name ?? i}>
                   <Item>
-                    <Link href={`/portfolio/${p.id}`}>
+                    <Link
+                      href={`/portfolio/${p.id}`}
+                      style={{
+                        textDecoration: "none",
+                        color: "inherit",
+                        display: "block",
+                      }}
+                    >
                       <Box
                         component="img"
                         src={p.images?.[0] || "/assets/images/profile.jpg"}
                         sx={{ width: "100%", height: 200, objectFit: "cover", borderRadius: "16px" }}
                       />
-                      <Typography sx={{ mt: 1, fontWeight: 600 }}>{p.name}</Typography>
+                      <Typography sx={{ mt: 1, fontWeight: 600, color: "text.primary" }}>
+                        {p.name}
+                      </Typography>
                       {/* Optional: show tags */}
-                      <Box sx={{ display: "flex", gap: 1, mt: 0.5, flexWrap: "wrap" }}>
+                      <Box sx={{ display: "flex", gap: 1, mt: 0.5, flexWrap: "wrap", maxWidth: "100%" }}>
                         {p.tags?.map(tag => (
                           <Box
                             key={tag}
@@ -129,6 +138,10 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
                               color: "primary.contrastText",
                               border: "1px solid",
                               borderColor: "primary.main",
+                              maxWidth: "100%",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
                             }}
                           >
                             {tag}
