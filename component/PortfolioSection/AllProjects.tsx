@@ -15,6 +15,7 @@ const BEST_PROJECT_NAMES = [
   "Aramco F1 Paddock",
   "Brandweer Training",
   "Tarneeb Masters",
+  "Quess",
 ];
 
 export default function AllProjects({
@@ -84,7 +85,7 @@ export default function AllProjects({
       {filter === "All" ? (
         <>
           <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-            Best Projects / Accomplishments
+            Featured Accomplishments
           </Typography>
           {renderProjectGrid(bestProjects)}
 
