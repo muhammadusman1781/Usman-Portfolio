@@ -12,9 +12,6 @@ import {
   Button,
   ListItemButton,
   ListItemText,
-  CssBaseline,
-  Grid,
-  Container,
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -117,18 +114,18 @@ export default function Header(props: Props) {
             </Link>
           </Typography>
 
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Button
                 href={`${item === "Home" ? "/" : "#" + item.toLowerCase()}`}
                 key={item}
-                sx={{ color: "#fff" }}
+                sx={{ color: "#fff", fontWeight: 600 }}
               >
                 {item}
               </Button>
             ))}
           </Box>
-          <Box sx={{ display: { xs: "none", md: "block" }, mr: 1 }}>
+          <Box sx={{ display: { xs: "none", lg: "block" }, mr: 1 }}>
             <Box component="a" href="#contact" sx={{ textDecoration: "none" }}>
               <MUIButton>Contact Me</MUIButton>
             </Box>
@@ -169,9 +166,7 @@ export default function Header(props: Props) {
       </AppBar>
       <Box
         component="nav"
-        sx={{
-          backgroundColor: "red",
-        }}
+        sx={{}}
       >
         <Drawer
           container={container}

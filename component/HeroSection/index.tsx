@@ -6,8 +6,6 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import { BounceInFwd, animatedGradiant } from "../Animations/Keyframes";
-import ParticlesHeroSec from "../Animations/ParticlesHeroSec";
 import MUIButton from "../MUIButton";
 import { memo } from "react";
 import SocialIcon from "../Footer/SocialIcon";
@@ -19,7 +17,6 @@ function HeroSection() {
   return (
     <Box component="section">
       <Container maxWidth="lg">
-        <ParticlesHeroSec />
         <Grid
           container
           spacing={{ xs: 3, md: 5 }}
@@ -29,6 +26,8 @@ function HeroSection() {
             minHeight: { xs: "auto", md: "62vh" },
             pt: { xs: 11, md: 10 },
             pb: { xs: 4, md: 5 },
+            position: "relative",
+            overflow: "hidden",
           }}
         >
           <Grid
@@ -148,23 +147,12 @@ function HeroSection() {
                 position: "relative",
                 maxWidth: { xs: 220, sm: 260, md: 300 },
                 mx: "auto",
+                p: 0.75,
+                borderRadius: 100,
+                background:
+                  "linear-gradient(140deg, rgba(0, 209, 255, 0.45), rgba(139, 92, 246, 0.45))",
               }}
             >
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "0%",
-                  left: 0,
-                  height: "100%",
-                  width: "100%",
-                  background:
-                    "linear-gradient(60deg, #F4F1DE, #29a587, #3D405B, #F2CC8F)",
-                  borderRadius: 100,
-                  backgroundSize: "300% 300%",
-                  animation: `${BounceInFwd} 4s both,${animatedGradiant} 3s ease alternate infinite`,
-                  margin: "auto",
-                }}
-              ></Box>
               <Box
                 component="img"
                 src="/assets/images/profile.jpg"
@@ -176,8 +164,6 @@ function HeroSection() {
                   height: "auto",
                   position: "relative",
                   objectFit: "cover",
-
-                  animation: `${BounceInFwd} 4s both`,
                 }}
               />
             </Box>
