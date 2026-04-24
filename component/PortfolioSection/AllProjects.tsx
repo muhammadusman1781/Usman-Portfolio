@@ -1,4 +1,5 @@
 import {
+  IconButton,
   Box,
   Button,
   Card,
@@ -6,8 +7,12 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Tooltip,
   Typography,
 } from "@mui/material";
+import AndroidIcon from "@mui/icons-material/Android";
+import AppleIcon from "@mui/icons-material/Apple";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MUIButton from "../MUIButton";
 import Link from "next/link";
 import { portfolioDataWithId, Tag } from "./data";
@@ -86,57 +91,72 @@ export default function AllProjects({
               </Link>
             </Box>
             <CardContent sx={{ px: "30px", py: 2 }}>
-              <Typography sx={{ fontSize: "22px", fontWeight: 500 }}>
-                {val.name}
-              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: 1,
+                }}
+              >
+                <Typography sx={{ fontSize: "22px", fontWeight: 500 }}>
+                  {val.name}
+                </Typography>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, minWidth: 86, justifyContent: "flex-end" }}>
+                  {val.storeLinks?.android && (
+                    <Tooltip title="Google Play">
+                      <IconButton
+                        component="a"
+                        href={val.storeLinks.android}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="small"
+                        sx={{ color: "primary.main" }}
+                      >
+                        <AndroidIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
+                  {val.storeLinks?.ios && (
+                    <Tooltip title="App Store">
+                      <IconButton
+                        component="a"
+                        href={val.storeLinks.ios}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="small"
+                        sx={{ color: "primary.main" }}
+                      >
+                        <AppleIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
+                  {val.storeLinks?.steam && (
+                    <Tooltip title="Steam">
+                      <IconButton
+                        component="a"
+                        href={val.storeLinks.steam}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="small"
+                        sx={{ color: "primary.main" }}
+                      >
+                        <SportsEsportsIcon fontSize="small" />
+                      </IconButton>
+                    </Tooltip>
+                  )}
+                </Box>
+              </Box>
               <Typography
                 variant="body2"
                 sx={{
                   mt: 0.8,
                   color: "text.secondary",
-                  minHeight: 20,
+                  minHeight: 40,
                 }}
               >
                 {PROJECT_SUMMARY[val.name] || "Unity game project."}
               </Typography>
-              <Box sx={{ mt: 1.2, display: "flex", gap: 0.8, flexWrap: "wrap" }}>
-                {val.storeLinks?.android && (
-                  <Button
-                    component="a"
-                    href={val.storeLinks.android}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    size="small"
-                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
-                  >
-                    Google Play
-                  </Button>
-                )}
-                {val.storeLinks?.ios && (
-                  <Button
-                    component="a"
-                    href={val.storeLinks.ios}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    size="small"
-                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
-                  >
-                    App Store
-                  </Button>
-                )}
-                {val.storeLinks?.steam && (
-                  <Button
-                    component="a"
-                    href={val.storeLinks.steam}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    size="small"
-                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
-                  >
-                    Steam
-                  </Button>
-                )}
-              </Box>
             </CardContent>
             <CardActions sx={{ position: "relative", px: "30px" }}>
               <Link href={`/portfolio/${val.id}`}>
