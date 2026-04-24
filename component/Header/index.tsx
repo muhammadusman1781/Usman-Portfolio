@@ -26,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "Services", "Skills", "Portfolio", "Contact"];
+const navItems = ["Home", "Services", "Skills", "Portfolio"];
 const toolBarStyle = {
   width: "100%",
   maxWidth: 1200,

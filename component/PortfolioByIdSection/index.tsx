@@ -118,7 +118,19 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
                       {/* Optional: show tags */}
                       <Box sx={{ display: "flex", gap: 1, mt: 0.5, flexWrap: "wrap" }}>
                         {p.tags?.map(tag => (
-                          <Box key={tag} sx={{ fontSize: 12, px: 1, py: 0.25, borderRadius: 1, bgcolor: "action.hover" }}>
+                          <Box
+                            key={tag}
+                            sx={{
+                              fontSize: 12,
+                              px: 1,
+                              py: 0.25,
+                              borderRadius: 1,
+                              bgcolor: "primary.dark",
+                              color: "primary.contrastText",
+                              border: "1px solid",
+                              borderColor: "primary.main",
+                            }}
+                          >
                             {tag}
                           </Box>
                         ))}
