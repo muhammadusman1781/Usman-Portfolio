@@ -48,7 +48,7 @@ export default function AllProjects({
                     overflow: "hidden",
                     "&:hover": { transform: "scale(1.05, 1.05)" },
                   }}
-                  image={val.images?.[0] || "/assets/images/home/dot.png"}
+                  image={val.images?.[0] || "/assets/images/profile.jpg"}
                   title={val.name}
                 />
               </Link>
@@ -62,17 +62,6 @@ export default function AllProjects({
               <Link href={`/portfolio/${val.id}`}>
                 <MUIButton>View</MUIButton>
               </Link>
-              <Box
-                component="img"
-                src="/assets/images/home/dot.png"
-                sx={{
-                  position: "absolute",
-                  right: "-24px",
-                  bottom: "-84px",
-                  width: 141,
-                  height: 141,
-                }}
-              />
             </CardActions>
           </Card>
         </Grid>

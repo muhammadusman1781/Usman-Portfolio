@@ -132,6 +132,9 @@ function HeroSection() {
                 <Box component="a" href="#services" sx={{ textDecoration: "none" }}>
                   <MUIButton>What I Do</MUIButton>
                 </Box>
+                <Box component="a" href="#contact" sx={{ textDecoration: "none" }}>
+                  <MUIButton>Contact Me</MUIButton>
+                </Box>
               </Box>
 
               <Box sx={{ mt: 2 }}>

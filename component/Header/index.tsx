@@ -19,12 +19,11 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { ThemeModeContext } from "../../theme";
 import Link from "next/link";
+import MUIButton from "../MUIButton";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -34,7 +33,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "Services", "Skills", "Portfolio"];
+const navItems = ["Home", "Services", "Skills", "Portfolio", "Contact"];
 const toolBarStyle = {
   width: "100%",
   maxWidth: 1200,
@@ -128,6 +127,11 @@ export default function Header(props: Props) {
                 {item}
               </Button>
             ))}
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "block" }, mr: 1 }}>
+            <Box component="a" href="#contact" sx={{ textDecoration: "none" }}>
+              <MUIButton>Contact Me</MUIButton>
+            </Box>
           </Box>
           <IconButton
             sx={{ ml: 1 }}
