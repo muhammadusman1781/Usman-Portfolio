@@ -29,7 +29,7 @@ export default function PortfolioSection() {
   return (
     <Box id="portfolio" component="section" sx={section}>
       <Container>
-        <SectionHeader heading="PORTFOLIO" subHeading="MY Casessss" />
+        <SectionHeader heading="PORTFOLIO" subHeading="" />
         <Box sx={{ display: "flex", gap: 2, justifyContent: "center", mt: 3, mb: 1 }}>
           {/* Optional “All” button */}
           <Box component="button"

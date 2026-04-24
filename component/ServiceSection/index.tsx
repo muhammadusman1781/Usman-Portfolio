@@ -1,57 +1,52 @@
 import {
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
-  Grid,
+  Chip,
   Typography,
-  useTheme,
   Container,
 } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
 import { section } from "../Style";
-const slideData = [
+
+const capabilityData = [
   {
-    category: "game development",
+    category: "Multiplayer",
     heading: "Multiplayer Games",
     description:
-      "As a specialist in multiplayer games, I have the knowledge and expertise to create engaging and immersive gaming experiences that allow players to connect and compete with each other in exciting ways. Whether I'm working on a first-person shooter, a strategy game, or a racing game, my focus is on designing games that allow players to engage in meaningful and challenging gameplay, either locally or online.",
+      "Design and development of realtime multiplayer games with matchmaking, private rooms, social lobbies, and stable networking using Photon Fusion, Photon PUN, and WebSockets.",
   },
   {
-    category: "game development",
-    heading: "2D & 3D Games",
+    category: "AR",
+    heading: "Augmented Reality Experiences",
     description:
-      "As a provider of 2D and 3D game development services, I offer a range of services to clients who are looking to create engaging and immersive games for a variety of platforms. Whether my clients are looking to create simple 2D mobile games or complex 3D titles for Mac and PCs, I work hard with design team to bring their idea to life.",
-  },
-  // {
-  //   category: "web development",
-  //   heading: "ERP Systems",
-  //   description:
-  //     "I have hands-on experience working and deploying ERP systems where he has utilized diversified skill sets including CodeIgniter, Jquery, Javascript, PHP, MySQL. ",
-  // },
-  {
-    category: "game development",
-    heading: "Open world games",
-    description:
-      "I love open world games and i would like to extend my career in this genre of games. I have not worked much in this category but i am eager to adopt this genre. I am fully confident that my skills can help me learn and adopt open world genre in very less time",
+      "Marker-based and markerless AR apps for events, education, and branded activations with immersive interactions, multilingual support, and production-ready user flows.",
   },
   {
-    category: "game development",
-    heading: "Story Based Games",
+    category: "VR",
+    heading: "VR Simulations & Training",
     description:
-      "As a provider of story-based game development services, I'm specialized in creating games that focus on immersive narratives, compelling characters, and engaging gameplay mechanics. I love to develop games that offer a rich and captivating story that keeps players engaged from start to finish.",
+      "Immersive VR projects for Meta Quest 2/3 including firefighter drills, equipment training, and industrial demos with realistic interaction design and guided learning.",
   },
   {
-    category: "game development",
-    heading: "Idle Games",
+    category: "Hypercasual",
+    heading: "Hypercasual & Casual Games",
     description:
-      'Idle games, also known as incremental games or clicker games, are a unique type of game that offers a different kind of gaming experience compared to other genres. As a provider of idle games experience, I"m specialized in creating games that offer a more relaxed and casual style of play that can be enjoyed over an extended period.',
+      "Fast-loop hypercasual concepts built for retention and replayability, with clean controls, progressive difficulty, and rapid prototyping from idea to release.",
+  },
+  {
+    category: "Educational",
+    heading: "Educational Game Systems",
+    description:
+      "Knowledge-focused interactive modules with scenario-based flow, visual explanations, and end-of-session question rounds for practical learning and onboarding.",
+  },
+  {
+    category: "Casino",
+    heading: "Casino & Real-Money Features",
+    description:
+      "Development of casino-style game logic, wallet integrations, probability balancing, and secure transaction-aware gameplay systems for competitive real-money ecosystems.",
   },
 ];
 export default function ServiceSection() {
-  const theme = useTheme();
   return (
     <Box id="services" component="section" sx={section}>
       <Container maxWidth="lg">
@@ -71,108 +66,64 @@ export default function ServiceSection() {
           >
             WHAT I DO
           </Typography>
-          <Typography color={theme.palette.primary.main}>
-            My Services
-          </Typography>
+          <Typography color="primary.main">Core Capabilities</Typography>
         </Box>
         <Box
           sx={{
             py: 5,
           }}
         >
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={1}
-            pagination={{
-              clickable: true,
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: true,
-            }}
-            modules={[Autoplay, Pagination]}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
+          <Box
+            sx={{
+              display: "grid",
+              gap: 3,
+              gridTemplateColumns: {
+                xs: "1fr",
+                md: "repeat(2, minmax(0, 1fr))",
+                lg: "repeat(3, minmax(0, 1fr))",
               },
             }}
           >
-            {slideData?.map((val, index) => {
+            {capabilityData.map((val, index) => {
               return (
-                <SwiperSlide key={index}>
-                  <Card
+                <Card
+                  key={index}
+                  sx={{
+                    width: "100%",
+                    textAlign: "left",
+                    borderRadius: "20px",
+                    boxShadow: "none",
+                    height: "100%",
+                  }}
+                >
+                  <CardContent
                     sx={{
-                      width: "100%",
-                      textAlign: "left",
-                      borderRadius: "20px",
-                      boxShadow: "none",
+                      my: 1,
                     }}
                   >
-                    <CardContent
+                    <Chip
+                      label={val.category}
                       sx={{
-                        my: 2,
+                        fontWeight: 600,
+                        mb: 2,
                       }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: 14,
-                          fontWeight: 500,
-                          textTransform: "uppercase",
-                        }}
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        {val.category}
-                      </Typography>
-                      <Typography
-                        sx={{
-                          fontSize: "20px",
-                          mt: 3,
-                          mb: 1,
-                          fontWeight: 600,
-                        }}
-                        component="div"
-                      >
-                        {val.heading}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          minHeight: 150,
-                        }}
-                      >
-                        {val.description}
-                      </Typography>
-                    </CardContent>
-                    <CardActions
+                    />
+                    <Typography
                       sx={{
-                        position: "relative",
-                        mt: 5,
+                        fontSize: "20px",
+                        mb: 1.5,
+                        fontWeight: 700,
                       }}
+                      component="div"
                     >
-                      <Box
-                        component="img"
-                        src="/assets/images/home/dot.png"
-                        sx={{
-                          position: "absolute",
-                          right: "-24px",
-                          bottom: "-84px",
-                          width: 141,
-                          height: 141,
-                        }}
-                      />
-                    </CardActions>
-                  </Card>
-                </SwiperSlide>
+                      {val.heading}
+                    </Typography>
+                    <Typography variant="body2">{val.description}</Typography>
+                  </CardContent>
+                </Card>
               );
             })}
-          </Swiper>
+          </Box>
         </Box>
       </Container>
     </Box>

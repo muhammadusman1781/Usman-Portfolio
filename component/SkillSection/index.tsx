@@ -1,99 +1,88 @@
 import {
   Box,
-  Card,
-  CardContent,
   Container,
   Typography,
-  useTheme,
   Grid,
-  Divider,
+  Paper,
 } from "@mui/material";
 import SectionHeader from "../Section/SectionHeader";
-import SkillsCard from "../Section/SkillsCard";
 import { section } from "../Style";
-const skillsCardData = [
+
+const skillsGroups = [
   {
-    heading: "Unity",
-    percentage: 90,
+    heading: "Game Development Core",
+    points: ["Unity Engine", "C#", "2D & 3D Gameplay", "Performance Optimization"],
   },
   {
-    heading: "C#",
-    percentage: 90,
+    heading: "Networking & Systems",
+    points: [
+      "Photon Fusion & Photon PUN",
+      "WebSockets Integration",
+      "REST API Integration",
+      "Third-Party SDK Integration",
+    ],
   },
   {
-    heading: "APIs integration",
-    percentage: 90,
+    heading: "Platforms & Delivery",
+    points: [
+      "Android, iOS, WebGL, PC",
+      "Meta Quest 2 & 3 (VR)",
+      "Version Control with Git",
+      "Build, Testing, and Deployment",
+    ],
   },
   {
-    heading: "Third Parties SDKs",
-    percentage: 90,
-  },
-  {
-    heading: "Sockets Integrations",
-    percentage: 85,
-  },
-  {
-    heading: "Multiplayer games",
-    percentage: 90,
-  },
-  {
-    heading: ".NET",
-    percentage: 80,
-  },
-  {
-    heading: "Optimization",
-    percentage: 85,
-  },
-  {
-    heading: "2D",
-    percentage: 80,
-  },
-  {
-    heading: "3D",
-    percentage: 90,
-  },
-  {
-    heading: "Team Leadership",
-    percentage: 90,
-  },
-  {
-    heading: "Project Management",
-    percentage: 90,
-  },
-  {
-    heading: "Client Relationship",
-    percentage: 85,
-  },
-  {
-    heading: "Git",
-    percentage: 80,
-  },
-  {
-    heading: "Project Management Tools",
-    percentage: 90,
+    heading: "Leadership & Collaboration",
+    points: [
+      "Team Leadership",
+      "Project Planning & Ownership",
+      "Client Communication",
+      "Cross-Functional Collaboration",
+    ],
   },
 ];
+
 export default function SkillSection() {
-  const theme = useTheme();
   return (
     <Box id="skills" component="section" sx={section}>
       <Container>
-        <SectionHeader heading="PROFESSIONAL SKILLS" subHeading="MY TALENT" />
+        <SectionHeader heading="PROFESSIONAL SKILLS" subHeading="Core Strengths" />
         <Box
           sx={{
             py: 5,
           }}
         >
-          <Grid container spacing={4}>
-            {skillsCardData.map((val, index) => (
-              <Grid
-                item
-                md={4}
-                sx={{
-                  width: "100%",
-                }}
-              >
-                <SkillsCard heading={val.heading} percentage={val.percentage} />
+          <Grid container spacing={3}>
+            {skillsGroups.map((group, index) => (
+              <Grid item xs={12} md={6} key={index}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 3,
+                    borderRadius: "16px",
+                    height: "100%",
+                    border: "1px solid",
+                    borderColor: "divider",
+                    backgroundColor: "background.paper",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "20px",
+                      fontWeight: 700,
+                      mb: 1.5,
+                    }}
+                  >
+                    {group.heading}
+                  </Typography>
+                  <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
+                    {group.points.map((point) => (
+                      <Box component="li" key={point} sx={{ mb: 0.75 }}>
+                        <Typography variant="body1">{point}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
+                </Paper>
               </Grid>
             ))}
           </Grid>
