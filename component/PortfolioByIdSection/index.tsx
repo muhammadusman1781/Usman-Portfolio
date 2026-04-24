@@ -37,14 +37,16 @@ const overlap = (a?: readonly MaybeTag[], b?: readonly MaybeTag[]) => {
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 const Item = styled(Paper)(({ theme }) => ({
-  //   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  //   ...theme.typography.body2,
-  //   padding: theme.spacing(1),
-  //   textAlign: "center",
-  //   color: theme.palette.text.secondary,
-  backgroundColor: "transparent",
-  border: 0,
+  backgroundColor: "rgba(12, 18, 34, 0.9)",
+  border: "1px solid rgba(93, 125, 255, 0.35)",
+  borderRadius: "16px",
   boxShadow: "none",
+  overflow: "hidden",
+  transition: "transform 0.25s ease, box-shadow 0.25s ease",
+  "&:hover": {
+    transform: "translateY(-4px)",
+    boxShadow: "0 12px 24px rgba(0, 0, 0, 0.35)",
+  },
 }));
 
 interface Project {
@@ -108,20 +110,22 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
               {similar.map((p, i) => (
                 <Grid item md={4} xs={12} key={p.id ?? p.name ?? i}>
                   <Item>
-                    <Link
-                      href={`/portfolio/${p.id}`}
-                      style={{
-                        textDecoration: "none",
-                        color: "inherit",
-                        display: "block",
-                      }}
-                    >
+                    <Link href={`/portfolio/${p.id}`} legacyBehavior>
+                      <Box
+                        component="a"
+                        sx={{
+                          textDecoration: "none",
+                          color: "common.white",
+                          display: "block",
+                          p: 1.5,
+                        }}
+                      >
                       <Box
                         component="img"
                         src={p.images?.[0] || "/assets/images/profile.jpg"}
-                        sx={{ width: "100%", height: 200, objectFit: "cover", borderRadius: "16px" }}
+                        sx={{ width: "100%", height: 200, objectFit: "cover", borderRadius: "12px" }}
                       />
-                      <Typography sx={{ mt: 1, fontWeight: 600, color: "text.primary" }}>
+                      <Typography sx={{ mt: 1.2, fontWeight: 700, color: "common.white" }}>
                         {p.name}
                       </Typography>
                       {/* Optional: show tags */}
@@ -147,6 +151,7 @@ export default function PortfolioByIdSection({ data }: { data: Project }) {
                             {tag}
                           </Box>
                         ))}
+                      </Box>
                       </Box>
                     </Link>
                   </Item>

@@ -46,7 +46,7 @@ const skillsGroups = [
       "AI-assisted game architecture planning",
       "Faster feature prototyping and implementation",
       "Workflow acceleration with AI coding assistants",
-      "Tools: Codex, Claude Sonnet, Claude Opus",
+      "Tools: Cursor, Bézi, Codex, Claude Sonnet, Claude Opus",
     ],
   },
 ];

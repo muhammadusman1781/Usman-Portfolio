@@ -45,6 +45,12 @@ const capabilityData = [
     description:
       "Development of casino-style game logic, wallet integrations, probability balancing, and secure transaction-aware gameplay systems for competitive real-money ecosystems.",
   },
+  {
+    category: "Ads",
+    heading: "Playable Ads Development",
+    description:
+      "I create high-converting playable ads in Unity, including rapid interactive ad prototypes and production ad units using Unity Playworks and LunaLabs workflows.",
+  },
 ];
 export default function ServiceSection() {
   return (
