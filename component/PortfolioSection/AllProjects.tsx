@@ -18,6 +18,13 @@ const BEST_PROJECT_NAMES = [
   "Quess",
 ];
 
+const getShortDescription = (description?: string) => {
+  if (!description) return "Unity game project.";
+  const clean = description.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  if (!clean) return "Unity game project.";
+  return clean.length > 42 ? `${clean.slice(0, 39).trim()}...` : clean;
+};
+
 export default function AllProjects({
   filter = "All",
 }: {
@@ -67,11 +74,49 @@ export default function AllProjects({
               <Typography sx={{ fontSize: "22px", fontWeight: 500 }}>
                 {val.name}
               </Typography>
+              <Typography
+                variant="body2"
+                sx={{
+                  mt: 0.8,
+                  color: "text.secondary",
+                  minHeight: 20,
+                }}
+              >
+                {getShortDescription(val.description)}
+              </Typography>
             </CardContent>
             <CardActions sx={{ position: "relative", px: "30px" }}>
               <Link href={`/portfolio/${val.id}`}>
                 <MUIButton>View</MUIButton>
               </Link>
+              <Box
+                sx={{
+                  ml: "auto",
+                  display: "flex",
+                  gap: 0.8,
+                  flexWrap: "wrap",
+                  justifyContent: "flex-end",
+                }}
+              >
+                {(val.tags ?? []).slice(0, 2).map((tag) => (
+                  <Box
+                    key={tag}
+                    sx={{
+                      fontSize: 11,
+                      px: 1,
+                      py: 0.35,
+                      borderRadius: 1,
+                      bgcolor: "primary.dark",
+                      color: "primary.contrastText",
+                      border: "1px solid",
+                      borderColor: "primary.main",
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {tag}
+                  </Box>
+                ))}
+              </Box>
             </CardActions>
           </Card>
         </Grid>
