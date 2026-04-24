@@ -50,7 +50,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/SCUshbHdmZpnGaMP3JMvCK2mwQxIWJ8EDiI9JQMoIhw0jWEY1jPKwkthdakXQS-IbtU=w2560-h1440-rw",
       "https://play-lh.googleusercontent.com/u7aocR9FjCoClsJJES90XH2Ko8U5Gh6-FFGxiutC5PPWpZYs7d6pSmdGBU_nMesbZ8n9=w2560-h1440-rw",
     ],
-    tags: ["Multiplayer", "Board Games"],
+    tags: ["Multiplayer"],
   },
   {
     name: "Aramco F1 Paddock",
@@ -127,7 +127,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/GvTKj3NSQ9OvRDnt6k1KIj2VFPVeraEMUUoL1_QvDowsCzEElyUQiNjoqy-Dr1NCJRSV=w5120-h2880",
       "https://play-lh.googleusercontent.com/FxtZMpppWyv8BNzWvTVmam5U-MVpBUfG98ZzsPtZl8bigPgxA8A8_Ksompg2IjREDbxx=w5120-h2880",
     ],
-    tags: ["Multiplayer", "Board Games"],
+    tags: ["Multiplayer"],
   },
   {
     name: "Battle Royale",
@@ -163,7 +163,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/battleroyal/3.png",
       "/assets/images/portfolio/battleroyal/4.png",
     ],
-    tags: ["Multiplayer", "Board Games"],
+    tags: ["Multiplayer"],
   },
   {
     name: "Kynect Game",
@@ -240,7 +240,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/kaizilla/3.png",
       "/assets/images/portfolio/kaizilla/4.png",
     ],
-    tags: ["Multiplayer", "Board Games"],
+    tags: ["Multiplayer"],
   },
   // Speed Superhero Game is hidden for now.
   {
@@ -278,7 +278,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/parchisking/4.jpg",
       // "/assets/images/portfolio/parchisking/5.jpg",
     ],
-    tags: ["Multiplayer"],
+    tags: ["Multiplayer", "Board Games"],
   },
   {
     name: "Boat Merge Game",
@@ -430,7 +430,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/quess/3.png",
       "/assets/images/portfolio/quess/4.png",
     ],
-    tags: ["Multiplayer"],
+    tags: ["Multiplayer", "Board Games"],
   },
   {
     name: "Checkers",
@@ -460,7 +460,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
             <li>Photon PUN</li>
         </ul>`,
     images: ["/assets/images/portfolio/quess/1.png"],
-    tags: ["Multiplayer"],
+    tags: ["Multiplayer", "Board Games"],
   },
   {
     name: "Backgammon",
@@ -495,7 +495,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/backgammon/3.png",
       "/assets/images/portfolio/backgammon/4.png",
     ],
-    tags: ["Multiplayer"],
+    tags: ["Multiplayer", "Board Games"],
   },
   {
     name: "Killer Pool",
