@@ -14,6 +14,11 @@ export type PortfolioItem = {
   videoUrl?: string;
   description?: string;
   playstore?: string;
+  storeLinks?: {
+    android?: string;
+    ios?: string;
+    steam?: string;
+  };
   tags?: Tag[];
 };
 export const portfolioData: Omit<PortfolioItem, "id">[] = [
@@ -50,6 +55,12 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/SCUshbHdmZpnGaMP3JMvCK2mwQxIWJ8EDiI9JQMoIhw0jWEY1jPKwkthdakXQS-IbtU=w2560-h1440-rw",
       "https://play-lh.googleusercontent.com/u7aocR9FjCoClsJJES90XH2Ko8U5Gh6-FFGxiutC5PPWpZYs7d6pSmdGBU_nMesbZ8n9=w2560-h1440-rw",
     ],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/search?q=tarneeb%20masters&c=apps&hl=en",
+      ios:
+        "https://apps.apple.com/us/app/tarneeb-masters-%D9%84%D8%B9%D8%A8%D8%A9-%D8%B7%D8%B1%D9%86%D9%8A%D8%A8/id1128302574",
+    },
     tags: ["Multiplayer"],
   },
   {
@@ -127,6 +138,12 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "https://play-lh.googleusercontent.com/GvTKj3NSQ9OvRDnt6k1KIj2VFPVeraEMUUoL1_QvDowsCzEElyUQiNjoqy-Dr1NCJRSV=w5120-h2880",
       "https://play-lh.googleusercontent.com/FxtZMpppWyv8BNzWvTVmam5U-MVpBUfG98ZzsPtZl8bigPgxA8A8_Ksompg2IjREDbxx=w5120-h2880",
     ],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/apps/details?id=com.markadracing.camel&hl=en",
+      ios:
+        "https://apps.apple.com/us/app/markad-racing-2024/id1489191603",
+    },
     tags: ["Multiplayer"],
   },
   {
@@ -395,6 +412,10 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/tapfast/3.png",
       "/assets/images/portfolio/tapfast/4.png",
     ],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/apps/details?id=com.imadeabug.tapfast&hl=en",
+    },
     tags: ["Hypercasual"],
   },
   {
@@ -430,6 +451,12 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/quess/3.png",
       "/assets/images/portfolio/quess/4.png",
     ],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/apps/details?id=com.quess.gaming&hl=en",
+      ios: "https://apps.apple.com/us/app/quess-gaming/id6756303655",
+      steam: "https://store.steampowered.com/app/3962760/Quess/",
+    },
     tags: ["Multiplayer", "Board Games"],
   },
   {
@@ -460,6 +487,12 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
             <li>Photon PUN</li>
         </ul>`,
     images: ["/assets/images/portfolio/quess/1.png"],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/apps/details?id=com.quess.gaming&hl=en",
+      ios: "https://apps.apple.com/us/app/quess-gaming/id6756303655",
+      steam: "https://store.steampowered.com/app/3962760/Quess/",
+    },
     tags: ["Multiplayer", "Board Games"],
   },
   {
@@ -495,6 +528,12 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
       "/assets/images/portfolio/backgammon/3.png",
       "/assets/images/portfolio/backgammon/4.png",
     ],
+    storeLinks: {
+      android:
+        "https://play.google.com/store/apps/details?id=com.quess.gaming&hl=en",
+      ios: "https://apps.apple.com/us/app/quess-gaming/id6756303655",
+      steam: "https://store.steampowered.com/app/3962760/Quess/",
+    },
     tags: ["Multiplayer", "Board Games"],
   },
   {

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   CardActions,
   CardContent,
@@ -98,6 +99,44 @@ export default function AllProjects({
               >
                 {PROJECT_SUMMARY[val.name] || "Unity game project."}
               </Typography>
+              <Box sx={{ mt: 1.2, display: "flex", gap: 0.8, flexWrap: "wrap" }}>
+                {val.storeLinks?.android && (
+                  <Button
+                    component="a"
+                    href={val.storeLinks.android}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="small"
+                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
+                  >
+                    Google Play
+                  </Button>
+                )}
+                {val.storeLinks?.ios && (
+                  <Button
+                    component="a"
+                    href={val.storeLinks.ios}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="small"
+                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
+                  >
+                    App Store
+                  </Button>
+                )}
+                {val.storeLinks?.steam && (
+                  <Button
+                    component="a"
+                    href={val.storeLinks.steam}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="small"
+                    sx={{ minWidth: "auto", px: 1.2, py: 0.35, fontSize: 11 }}
+                  >
+                    Steam
+                  </Button>
+                )}
+              </Box>
             </CardContent>
             <CardActions sx={{ position: "relative", px: "30px" }}>
               <Link href={`/portfolio/${val.id}`}>
