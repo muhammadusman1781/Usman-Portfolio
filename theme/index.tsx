@@ -7,7 +7,7 @@ import lightTheme from "./light";
 export const ThemeModeContext = createContext({ toggleColorMode: () => {} });
 type ThemeMode = "light" | "dark";
 export default function CustomThemeProvider({ children }: any) {
-  const [mode, setMode] = useLocalStorage<ThemeMode>("themeMode", "light");
+  const [mode, setMode] = useLocalStorage<ThemeMode>("themeMode", "dark");
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import {
   AppBar,
   Box,
@@ -12,13 +12,9 @@ import {
   Button,
   ListItemButton,
   ListItemText,
-  useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { ThemeModeContext } from "../../theme";
 import Link from "next/link";
 import MUIButton from "../MUIButton";
 interface Props {
@@ -39,8 +35,6 @@ const toolBarStyle = {
 export default function Header(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const theme = useTheme();
-  const colorMode = useContext(ThemeModeContext);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -140,17 +134,6 @@ export default function Header(props: Props) {
               <MUIButton>Contact Me</MUIButton>
             </Box>
           </Box>
-          <IconButton
-            sx={{ ml: 1 }}
-            onClick={colorMode.toggleColorMode}
-            color="inherit"
-          >
-            {theme.palette.mode === "dark" ? (
-              <Brightness7Icon />
-            ) : (
-              <Brightness4Icon />
-            )}
-          </IconButton>
           {mobileOpen ? (
             <IconButton
               color="inherit"
@@ -188,7 +171,7 @@ export default function Header(props: Props) {
           }}
           PaperProps={{
             sx: {
-              backgroundColor: theme.palette.background.default,
+              backgroundColor: "background.default",
             },
           }}
           sx={{

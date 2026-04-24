@@ -85,7 +85,12 @@ export default function ContactMe() {
             <Grid item xs={12} md={7}>
               <Grid container spacing={2}>
                 {contactItems.map((item) => (
-                  <Grid item xs={12} sm={6} key={item.title}>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={item.title === "Email" ? 12 : 6}
+                    key={item.title}
+                  >
                     <Card
                       sx={{
                         height: "100%",
@@ -105,7 +110,14 @@ export default function ContactMe() {
                             href={item.href}
                             target={item.href.startsWith("http") ? "_blank" : undefined}
                             underline="hover"
-                            sx={{ color: "text.secondary", wordBreak: "break-word" }}
+                            sx={{
+                              color: "text.secondary",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              display: "inline-block",
+                              maxWidth: "100%",
+                            }}
                           >
                             {item.value}
                           </Link>
