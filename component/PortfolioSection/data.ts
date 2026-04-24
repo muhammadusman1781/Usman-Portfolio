@@ -458,7 +458,7 @@ export const portfolioData: Omit<PortfolioItem, "id">[] = [
             <li>C#</li>
             <li>Photon PUN</li>
         </ul>`,
-    images: [],
+    images: ["/assets/images/portfolio/quess/1.png"],
     tags: ["Multiplayer"],
   },
   {

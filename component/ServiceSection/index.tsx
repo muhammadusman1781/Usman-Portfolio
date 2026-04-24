@@ -94,6 +94,31 @@ export default function ServiceSection() {
                     borderRadius: "20px",
                     boxShadow: "none",
                     height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    transition: "transform 0.28s ease, border-color 0.28s ease",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      inset: 0,
+                      borderRadius: "20px",
+                      padding: "1px",
+                      background:
+                        "linear-gradient(130deg, rgba(93,125,255,0.45), rgba(122,88,232,0.35))",
+                      WebkitMask:
+                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                      maskComposite: "exclude",
+                      opacity: 0,
+                      transition: "opacity 0.25s ease",
+                      pointerEvents: "none",
+                    },
+                    "&:hover": {
+                      transform: "translateY(-6px)",
+                      "&::before": {
+                        opacity: 1,
+                      },
+                    },
                   }}
                 >
                   <CardContent
@@ -106,6 +131,9 @@ export default function ServiceSection() {
                       sx={{
                         fontWeight: 600,
                         mb: 2,
+                        bgcolor: "rgba(93, 125, 255, 0.16)",
+                        border: "1px solid",
+                        borderColor: "divider",
                       }}
                     />
                     <Typography

@@ -5,7 +5,7 @@ const MUIButton = styled(Button)(({ theme }) => ({
   color: theme.palette.text.primary,
   borderRadius: "12px",
   border: `1px solid ${theme.palette.primary.main}`,
-  boxShadow: "0 8px 20px rgba(0, 209, 255, 0.18)",
+  boxShadow: "0 6px 14px rgba(34, 46, 88, 0.22)",
   padding: "10px 24px",
   display: "inline-block",
   position: "relative",
@@ -30,7 +30,7 @@ const MUIButton = styled(Button)(({ theme }) => ({
   "&:hover": {
     color: theme.palette.secondary.contrastText,
     transform: "translateY(-1px)",
-    boxShadow: "0 12px 24px rgba(139, 92, 246, 0.28)",
+    boxShadow: "0 10px 18px rgba(50, 61, 112, 0.32)",
     "&::before": {
       transform: "translateX(0)",
     },

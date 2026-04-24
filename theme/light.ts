@@ -5,24 +5,24 @@ const lightTheme = responsiveFontSizes(
     palette: {
       mode: "light",
       background: {
-        default: "#F4F6FF",
-        paper: "#FFFFFF",
+        default: "#EDEFF7",
+        paper: "#F7F9FF",
       },
       primary: {
-        light: "#6EF7FF",
-        main: "#00D1FF",
-        dark: "#0095C8",
-        contrastText: "#04111B",
+        light: "#7292FF",
+        main: "#4A6CF7",
+        dark: "#334CC2",
+        contrastText: "#F8FAFF",
       },
       secondary: {
-        light: "#D7B6FF",
-        main: "#8B5CF6",
-        dark: "#6732D2",
+        light: "#B39BFF",
+        main: "#6D4ED6",
+        dark: "#513AA2",
         contrastText: "#FFFFFF",
       },
       text: {
-        primary: "#0E1528",
-        secondary: "#3A4666",
+        primary: "#141A2F",
+        secondary: "#4A5574",
       },
     },
     shape: {
@@ -39,8 +39,8 @@ const lightTheme = responsiveFontSizes(
         styleOverrides: {
           root: {
             background:
-              "linear-gradient(90deg, rgba(8,18,38,0.92) 0%, rgba(20,35,74,0.92) 55%, rgba(44,21,99,0.92) 100%)",
-            border: "1px solid rgba(0, 209, 255, 0.2)",
+              "linear-gradient(90deg, rgba(23,31,61,0.93) 0%, rgba(35,47,88,0.93) 55%, rgba(50,35,94,0.93) 100%)",
+            border: "1px solid rgba(74, 108, 247, 0.28)",
             backdropFilter: "blur(8px)",
           },
         },
@@ -48,8 +48,8 @@ const lightTheme = responsiveFontSizes(
       MuiCard: {
         styleOverrides: {
           root: {
-            border: "1px solid rgba(0, 209, 255, 0.15)",
-            boxShadow: "0 10px 30px rgba(13, 24, 44, 0.08)",
+            border: "1px solid rgba(74, 108, 247, 0.18)",
+            boxShadow: "0 10px 24px rgba(18, 26, 49, 0.1)",
           },
         },
       },

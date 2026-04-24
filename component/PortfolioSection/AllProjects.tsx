@@ -34,8 +34,18 @@ export default function AllProjects({
   const renderProjectGrid = (projects: typeof list) => (
     <Grid container spacing={2}>
       {projects.map((val) => (
-        <Grid item md={4} sx={{ width: "100%" }} key={val.id}>
-          <Card sx={{ borderRadius: "20px", position: "relative" }}>
+        <Grid item xs={12} sm={6} md={4} sx={{ width: "100%" }} key={val.id}>
+          <Card
+            sx={{
+              borderRadius: "20px",
+              position: "relative",
+              transition: "transform 0.28s ease, box-shadow 0.28s ease",
+              "&:hover": {
+                transform: "translateY(-6px)",
+                boxShadow: "0 16px 30px rgba(0, 0, 0, 0.28)",
+              },
+            }}
+          >
             <Box sx={{ padding: "30px" }}>
               <Link href={`/portfolio/${val.id}`}>
                 <CardMedia
@@ -46,7 +56,7 @@ export default function AllProjects({
                     transition: "transform 0.4s",
                     backgroundSize: "cover",
                     overflow: "hidden",
-                    "&:hover": { transform: "scale(1.05, 1.05)" },
+                    "&:hover": { transform: "scale(1.06, 1.06)" },
                   }}
                   image={val.images?.[0] || "/assets/images/profile.jpg"}
                   title={val.name}

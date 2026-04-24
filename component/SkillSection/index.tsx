@@ -73,6 +73,11 @@ export default function SkillSection() {
                     border: "1px solid",
                     borderColor: "divider",
                     backgroundColor: "background.paper",
+                    transition: "transform 0.25s ease, border-color 0.25s ease",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      borderColor: "primary.main",
+                    },
                   }}
                 >
                   <Typography

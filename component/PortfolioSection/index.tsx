@@ -14,12 +14,14 @@ export default function PortfolioSection() {
       component="button"
       onClick={() => setFilter(label)}
       sx={{
-        px: { xs: 2, md: 3 }, py: 1, borderRadius: 2, border: "none",
-        bgcolor: filter === label ? "primary.dark" : "primary.main",
+        px: { xs: 2, md: 3 }, py: 1, borderRadius: 2, border: "1px solid",
+        borderColor: filter === label ? "primary.light" : "divider",
+        bgcolor: filter === label ? "primary.dark" : "background.paper",
         color: "primary.contrastText",
         fontWeight: 600, fontSize: { xs: "0.9rem", md: "1rem" }, cursor: "pointer",
-        transition: "background 0.2s",
-        "&:hover": { bgcolor: "primary.dark" },
+        transition: "all 0.2s",
+        boxShadow: filter === label ? "0 0 0 1px rgba(93,125,255,0.25), 0 8px 18px rgba(93,125,255,0.28)" : "none",
+        "&:hover": { bgcolor: "primary.dark", borderColor: "primary.main", transform: "translateY(-1px)" },
       }}
     >
       {label}
@@ -44,11 +46,13 @@ export default function PortfolioSection() {
           <Box component="button"
             onClick={() => setFilter('All')}
             sx={{
-              px: { xs: 2, md: 3 }, py: 1, borderRadius: 2, border: "none",
-              bgcolor: filter === 'All' ? "primary.dark" : "primary.main",
+              px: { xs: 2, md: 3 }, py: 1, borderRadius: 2, border: "1px solid",
+              borderColor: filter === 'All' ? "primary.light" : "divider",
+              bgcolor: filter === 'All' ? "primary.dark" : "background.paper",
               color: "primary.contrastText", fontWeight: 600, fontSize: { xs: "0.9rem", md: "1rem" },
-              cursor: "pointer", transition: "background 0.2s",
-              "&:hover": { bgcolor: "primary.dark" },
+              cursor: "pointer", transition: "all 0.2s",
+              boxShadow: filter === 'All' ? "0 0 0 1px rgba(93,125,255,0.25), 0 8px 18px rgba(93,125,255,0.28)" : "none",
+              "&:hover": { bgcolor: "primary.dark", borderColor: "primary.main", transform: "translateY(-1px)" },
             }}
           >
             All

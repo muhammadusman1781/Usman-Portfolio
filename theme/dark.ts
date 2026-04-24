@@ -5,26 +5,26 @@ const darkTheme = responsiveFontSizes(
     palette: {
       mode: "dark",
       background: {
-        default: "#070B16",
-        paper: "#11182B",
+        default: "#090D1A",
+        paper: "#131A30",
       },
       primary: {
-        light: "#67F6FF",
-        main: "#00D1FF",
-        dark: "#0094C7",
-        contrastText: "#031019",
+        light: "#88A3FF",
+        main: "#5D7DFF",
+        dark: "#4561D0",
+        contrastText: "#F7F9FF",
       },
       secondary: {
-        light: "#C59CFF",
-        main: "#8B5CF6",
-        dark: "#6532C9",
+        light: "#B89EFF",
+        main: "#7A58E8",
+        dark: "#5D40B6",
         contrastText: "#FFFFFF",
       },
       text: {
-        primary: "#EAF2FF",
-        secondary: "#A8B4CE",
+        primary: "#E8EEFF",
+        secondary: "#A3AFCC",
       },
-      divider: "rgba(120, 160, 255, 0.2)",
+      divider: "rgba(110, 130, 220, 0.24)",
     },
     shape: {
       borderRadius: 14,
@@ -40,8 +40,8 @@ const darkTheme = responsiveFontSizes(
         styleOverrides: {
           root: {
             background:
-              "linear-gradient(90deg, rgba(8,18,38,0.95) 0%, rgba(16,29,58,0.95) 60%, rgba(33,16,75,0.95) 100%)",
-            border: "1px solid rgba(0, 209, 255, 0.25)",
+              "linear-gradient(90deg, rgba(15,22,44,0.95) 0%, rgba(22,32,63,0.95) 60%, rgba(35,24,72,0.95) 100%)",
+            border: "1px solid rgba(93, 125, 255, 0.35)",
             boxShadow: "0 10px 28px rgba(0, 0, 0, 0.4)",
             backdropFilter: "blur(8px)",
           },
@@ -50,8 +50,8 @@ const darkTheme = responsiveFontSizes(
       MuiCard: {
         styleOverrides: {
           root: {
-            border: "1px solid rgba(0, 209, 255, 0.18)",
-            boxShadow: "0 10px 30px rgba(0, 0, 0, 0.35)",
+            border: "1px solid rgba(93, 125, 255, 0.24)",
+            boxShadow: "0 10px 24px rgba(0, 0, 0, 0.32)",
           },
         },
       },

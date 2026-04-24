@@ -119,7 +119,17 @@ export default function Header(props: Props) {
               <Button
                 href={`${item === "Home" ? "/" : "#" + item.toLowerCase()}`}
                 key={item}
-                sx={{ color: "common.white", fontWeight: 600 }}
+                sx={{
+                  color: "common.white",
+                  fontWeight: 600,
+                  borderRadius: "10px",
+                  px: 1.4,
+                  border: "1px solid transparent",
+                  "&:hover": {
+                    bgcolor: "rgba(93,125,255,0.2)",
+                    borderColor: "rgba(93,125,255,0.5)",
+                  },
+                }}
               >
                 {item}
               </Button>
