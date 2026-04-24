@@ -4,8 +4,8 @@ export default function SectionHeader({
   heading,
   subHeading,
 }: {
-  heading: String;
-  subHeading: String;
+  heading: string;
+  subHeading: string;
 }) {
   const theme = useTheme();
   return (
@@ -17,15 +17,38 @@ export default function SectionHeader({
       <Typography
         variant="h3"
         sx={{
-          fontSize: { md: "44px", xs: "28px" },
+          fontSize: { md: "42px", xs: "28px" },
           lineHeight: 1.3,
-          fontWeight: 700,
+          fontWeight: 800,
           textTransform: "uppercase",
+          letterSpacing: 1,
         }}
       >
         {heading}
       </Typography>
-      <Typography color={theme.palette.primary.main}>{subHeading}</Typography>
+      {subHeading ? (
+        <Typography
+          sx={{
+            color: theme.palette.primary.main,
+            fontWeight: 600,
+            mt: 0.5,
+            textTransform: "uppercase",
+            letterSpacing: 0.8,
+          }}
+        >
+          {subHeading}
+        </Typography>
+      ) : null}
+      <Box
+        sx={{
+          width: 90,
+          height: 3,
+          mt: 1.5,
+          mx: "auto",
+          borderRadius: 99,
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+        }}
+      />
     </Box>
   );
 }

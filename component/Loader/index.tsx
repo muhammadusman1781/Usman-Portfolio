@@ -12,7 +12,7 @@ export default function Loader() {
         left: 0,
         right: 0,
         zIndex: 999999999,
-        backgroundColor: "#f5f5f5f5",
+        backgroundColor: "background.default",
       }}
     >
       <Box component="img" src="/assets/images/loader.svg" width={100} />

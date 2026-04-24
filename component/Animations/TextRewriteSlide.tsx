@@ -1,5 +1,5 @@
 import { Box, useTheme } from "@mui/material";
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import { BlinkCursor } from "./Keyframes";
 const _CONTENT = [
   "Unity Engine, C#",
@@ -73,7 +73,7 @@ function TextRewriteSlide() {
             fontSize: 20,
             fontWeight: "bold",
             paddingLeft: 1,
-            color: "#fff",
+            color: "text.primary",
           }}
         >
           |

@@ -1,24 +1,17 @@
-import { Box, Container, Typography, useTheme } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { section } from "../Style";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SocialIcon from "./SocialIcon";
-const iconStyle = {
-  mx: 1,
-  borderRadius: "20px",
-  padding: "5px",
-  fontSize: "40px",
-  "&:hover": {
-    cursor: "pointer",
-    color: "#fff",
-    background: "#29a587",
-    transition: "color 0.5s, background 0.5s",
-  },
-};
 export default function Footer() {
-  const theme = useTheme();
   return (
-    <Box component="section" sx={section}>
+    <Box
+      component="section"
+      sx={{
+        ...section,
+        borderTop: "1px solid",
+        borderColor: "divider",
+        pt: 3,
+      }}
+    >
       <Container>
         <Box
           display="flex"
@@ -26,11 +19,12 @@ export default function Footer() {
           flexWrap="wrap"
           sx={{
             alignItem: "center",
+            gap: 1.5,
           }}
         >
           <SocialIcon />
           <Box>
-            <Typography>
+            <Typography sx={{ color: "text.secondary" }}>
               © 2022 <Box component="span">Usman</Box>. All Right Reserved
             </Typography>
           </Box>

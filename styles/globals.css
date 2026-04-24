@@ -28,13 +28,13 @@ html {
 }
 
 span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background-color: #29a587;
+    background-color: #00d1ff;
     padding: 5px;
 }
 
 span.swiper-pagination-bullet {
     transition: 300ms opacity;
     vertical-align: middle;
-    background-color: #fff;
-    border: 1px solid #000;
+    background-color: #1a2744;
+    border: 1px solid #00d1ff;
 }

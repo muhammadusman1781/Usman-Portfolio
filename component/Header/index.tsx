@@ -99,7 +99,7 @@ export default function Header(props: Props) {
               flexGrow: 1,
               cursor: "pointer",
               display: { xs: "block", sm: "block" },
-              color: "#fff",
+              color: "common.white",
               textTransform: "uppercase",
             }}
           >
@@ -119,7 +119,7 @@ export default function Header(props: Props) {
               <Button
                 href={`${item === "Home" ? "/" : "#" + item.toLowerCase()}`}
                 key={item}
-                sx={{ color: "#fff", fontWeight: 600 }}
+                sx={{ color: "common.white", fontWeight: 600 }}
               >
                 {item}
               </Button>
@@ -184,7 +184,7 @@ export default function Header(props: Props) {
           sx={{
             display: { xs: "block", sm: "none" },
             zIndex: 122222,
-            backgroundColor: "#F0EBE3",
+            backgroundColor: "transparent",
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
