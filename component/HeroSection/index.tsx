@@ -1,7 +1,6 @@
 import TextRewriteSlide from "../Animations/TextRewriteSlide";
 import {
   Box,
-  Button,
   Container,
   Grid,
   Link,
@@ -23,27 +22,30 @@ function HeroSection() {
   const theme = useTheme();
   return (
     <Box component="section">
-      <Container>
+      <Container maxWidth="lg">
         <ParticlesHeroSec />
         <Grid
           container
-          spacing={0}
+          spacing={{ xs: 3, md: 4 }}
           alignItems="center"
           justifyContent="center"
-          style={{ minHeight: "100vh" }}
+          sx={{
+            minHeight: { xs: "auto", md: "78vh" },
+            py: { xs: 11, md: 8 },
+          }}
         >
           <Grid
             item
-            md={7}
+            xs={12}
+            md={6}
             sx={{
               zIndex: 1,
             }}
           >
             <Box
               component="div"
-              pt={10}
               sx={{
-                textAlign: "center",
+                textAlign: { xs: "center", md: "left" },
                 position: "relative",
               }}
             >
@@ -53,10 +55,10 @@ function HeroSection() {
                 sx={{
                   // animation: `${GlitchAnime} 500ms linear infinite`,
                   fontWeight: "900",
-                  fontSize: { md: "75px", xs: "50px" },
-                  lineHeight: { md: "100px", xs: "50px" },
+                  fontSize: { md: "58px", xs: "40px" },
+                  lineHeight: { md: "72px", xs: "52px" },
                   color: "#fff",
-                  padding: { md: "0", xs: "20px 0" },
+                  py: { md: 0, xs: 1.5 },
                   textTransform: "uppercase",
                   textShadow:
                     "2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgb(0 0 0 / 20%)",
@@ -82,10 +84,12 @@ function HeroSection() {
               </Box>
             </Box>
           </Grid>
-          <Grid item md={5}>
+          <Grid item xs={12} md={5}>
             <Box
               sx={{
                 position: "relative",
+                maxWidth: { xs: 280, sm: 360, md: 420 },
+                mx: "auto",
               }}
             >
               <Box
@@ -93,7 +97,7 @@ function HeroSection() {
                   position: "absolute",
                   top: "0%",
                   left: 0,
-                  height: "98.5%",
+                  height: "100%",
                   width: "100%",
                   background:
                     "linear-gradient(60deg, #F4F1DE, #29a587, #3D405B, #F2CC8F)",
@@ -107,12 +111,11 @@ function HeroSection() {
                 component="img"
                 src="/assets/images/profile.jpg"
                 sx={{
-                  // mx: "auto",
-                  alignItems: "center",
+                  display: "block",
                   padding: "5px",
                   borderRadius: 100,
                   width: "100%",
-                  height: "100%",
+                  height: "auto",
                   position: "relative",
                   objectFit: "cover",
 
@@ -129,10 +132,10 @@ function HeroSection() {
           component="span"
           sx={{
             position: "absolute",
-            top: 10,
+            top: 0,
             zIndex: -1,
             opacity: 0.03,
-            fontSize: "10.75rem",
+            fontSize: "7rem",
             fontFamily: "Caveat",
             fontWeight: 800,
             overflow: "hidden",
@@ -145,10 +148,10 @@ function HeroSection() {
           component="span"
           sx={{
             position: "absolute",
-            bottom: 0,
+            bottom: -20,
             zIndex: -1,
             opacity: 0.03,
-            fontSize: "10.75rem",
+            fontSize: "7rem",
             fontFamily: "Caveat",
             fontWeight: 800,
             overflow: "hidden",
