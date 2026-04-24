@@ -17,6 +17,11 @@ body {
     font-family: 'Jost', sans-serif;
 }
 
+html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+}
+
 .swiper.swiper-initialized.swiper-horizontal.swiper-pointer-events.swiper-backface-hidden {
     padding-top: 0px;
     padding-bottom: 50px;

@@ -1,6 +1,6 @@
-import TextRewriteSlide from "../Animations/TextRewriteSlide";
 import {
   Box,
+  Chip,
   Container,
   Grid,
   Typography,
@@ -14,25 +14,27 @@ import SocialIcon from "../Footer/SocialIcon";
 
 function HeroSection() {
   const theme = useTheme();
+  const tags = ["AR", "VR", "Multiplayer", "Hypercasual", "Educational", "Casino"];
+
   return (
     <Box component="section">
       <Container maxWidth="lg">
         <ParticlesHeroSec />
         <Grid
           container
-          spacing={{ xs: 4, md: 5 }}
+          spacing={{ xs: 3, md: 5 }}
           alignItems="center"
           justifyContent="center"
           sx={{
-            minHeight: { xs: "auto", md: "66vh" },
-            pt: { xs: 12, md: 10 },
-            pb: { xs: 6, md: 6 },
+            minHeight: { xs: "auto", md: "62vh" },
+            pt: { xs: 11, md: 10 },
+            pb: { xs: 4, md: 5 },
           }}
         >
           <Grid
             item
             xs={12}
-            md={6}
+            md={7}
             sx={{
               zIndex: 1,
             }}
@@ -46,25 +48,24 @@ function HeroSection() {
             >
               <Typography
                 sx={{
-                  fontSize: { xs: "14px", md: "16px" },
-                  fontWeight: 600,
+                  fontSize: { xs: "13px", md: "14px" },
+                  fontWeight: 700,
                   color: "primary.main",
                   textTransform: "uppercase",
-                  letterSpacing: 1,
+                  letterSpacing: 1.2,
                   mb: 1,
                 }}
               >
-                Unity Game Developer
+                Crafting Interactive Experiences
               </Typography>
               <Typography
                 variant="h2"
                 sx={{
                   fontWeight: "900",
-                  fontSize: { md: "52px", xs: "34px" },
-                  lineHeight: { md: "62px", xs: "42px" },
+                  fontSize: { md: "46px", xs: "32px" },
+                  lineHeight: { md: "56px", xs: "40px" },
                   color: "#fff",
                   py: { md: 0, xs: 1 },
-                  textTransform: "uppercase",
                   textShadow:
                     "2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgb(0 0 0 / 20%)",
                   fontFamily: "Jost",
@@ -76,32 +77,49 @@ function HeroSection() {
                     color: theme.palette.primary.main,
                   }}
                 >
-                  Muhammad{" "}
+                  Muhammad
                 </Box>
-                Usman
+                {" "}Usman
               </Typography>
 
               <Typography
                 sx={{
-                  mt: 1.5,
-                  mb: 2.5,
-                  maxWidth: 560,
+                  mt: 1,
+                  mb: 2,
+                  maxWidth: 620,
                   mx: { xs: "auto", md: 0 },
                   color: "text.secondary",
-                  fontSize: { xs: "15px", md: "17px" },
-                  lineHeight: 1.7,
+                  fontSize: { xs: "14px", md: "16px" },
+                  lineHeight: 1.75,
                 }}
               >
-                I build high-performance AR, VR, and multiplayer experiences for
-                mobile, web, and Meta Quest platforms, with a strong focus on
-                gameplay quality, networking stability, and real-world results.
+                Unity game developer focused on AR, VR, and realtime multiplayer
+                products for mobile, web, and Meta Quest. I turn ideas into
+                production-ready experiences with clean gameplay architecture,
+                stable networking, and user-first design.
               </Typography>
-
-              <TextRewriteSlide />
 
               <Box
                 sx={{
-                  mt: 2.5,
+                  display: "flex",
+                  gap: 1,
+                  flexWrap: "wrap",
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  mb: 2.5,
+                }}
+              >
+                {tags.map((tag) => (
+                  <Chip
+                    key={tag}
+                    label={tag}
+                    size="small"
+                    sx={{ fontWeight: 600 }}
+                  />
+                ))}
+              </Box>
+
+              <Box
+                sx={{
                   display: "flex",
                   gap: 1.5,
                   justifyContent: { xs: "center", md: "flex-start" },
@@ -116,16 +134,16 @@ function HeroSection() {
                 </Box>
               </Box>
 
-              <Box sx={{ mt: 2.5 }}>
+              <Box sx={{ mt: 2 }}>
                 <SocialIcon />
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={12} md={5}>
+          <Grid item xs={12} md={4}>
             <Box
               sx={{
                 position: "relative",
-                maxWidth: { xs: 240, sm: 300, md: 340 },
+                maxWidth: { xs: 220, sm: 260, md: 300 },
                 mx: "auto",
               }}
             >
@@ -157,9 +175,6 @@ function HeroSection() {
                   objectFit: "cover",
 
                   animation: `${BounceInFwd} 4s both`,
-                  "&::after": {
-                    content: '""',
-                  },
                 }}
               />
             </Box>

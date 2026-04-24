@@ -1,3 +1,4 @@
 export const section = {
-    my: 5,
-}
+  my: 5,
+  scrollMarginTop: { xs: "88px", md: "100px" },
+};
