@@ -40,6 +40,15 @@ const skillsGroups = [
       "Cross-Functional Collaboration",
     ],
   },
+  {
+    heading: "AI-Accelerated Development",
+    points: [
+      "AI-assisted game architecture planning",
+      "Faster feature prototyping and implementation",
+      "Workflow acceleration with AI coding assistants",
+      "Tools: Codex, Claude Sonnet, Claude Opus",
+    ],
+  },
 ];
 
 export default function SkillSection() {
