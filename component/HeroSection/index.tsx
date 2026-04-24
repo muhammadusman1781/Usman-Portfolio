@@ -3,17 +3,11 @@ import {
   Box,
   Container,
   Grid,
-  Link,
   Typography,
   useTheme,
 } from "@mui/material";
-import {
-  BounceInFwd,
-  GlitchAnime,
-  animatedGradiant,
-} from "../Animations/Keyframes";
+import { BounceInFwd, animatedGradiant } from "../Animations/Keyframes";
 import ParticlesHeroSec from "../Animations/ParticlesHeroSec";
-import SubHeader from "../SubHeader";
 import MUIButton from "../MUIButton";
 import { memo } from "react";
 import SocialIcon from "../Footer/SocialIcon";
@@ -26,12 +20,13 @@ function HeroSection() {
         <ParticlesHeroSec />
         <Grid
           container
-          spacing={{ xs: 3, md: 4 }}
+          spacing={{ xs: 4, md: 5 }}
           alignItems="center"
           justifyContent="center"
           sx={{
-            minHeight: { xs: "auto", md: "78vh" },
-            py: { xs: 11, md: 8 },
+            minHeight: { xs: "auto", md: "66vh" },
+            pt: { xs: 12, md: 10 },
+            pb: { xs: 6, md: 6 },
           }}
         >
           <Grid
@@ -49,16 +44,26 @@ function HeroSection() {
                 position: "relative",
               }}
             >
-              <SubHeader text="Hello I`m" />
+              <Typography
+                sx={{
+                  fontSize: { xs: "14px", md: "16px" },
+                  fontWeight: 600,
+                  color: "primary.main",
+                  textTransform: "uppercase",
+                  letterSpacing: 1,
+                  mb: 1,
+                }}
+              >
+                Unity Game Developer
+              </Typography>
               <Typography
                 variant="h2"
                 sx={{
-                  // animation: `${GlitchAnime} 500ms linear infinite`,
                   fontWeight: "900",
-                  fontSize: { md: "58px", xs: "40px" },
-                  lineHeight: { md: "72px", xs: "52px" },
+                  fontSize: { md: "52px", xs: "34px" },
+                  lineHeight: { md: "62px", xs: "42px" },
                   color: "#fff",
-                  py: { md: 0, xs: 1.5 },
+                  py: { md: 0, xs: 1 },
                   textTransform: "uppercase",
                   textShadow:
                     "2px 2px #000, -2px 2px #000, 2px -2px #000, -2px -2px #000, 5px 5px 0px rgb(0 0 0 / 20%)",
@@ -75,12 +80,44 @@ function HeroSection() {
                 </Box>
                 Usman
               </Typography>
+
+              <Typography
+                sx={{
+                  mt: 1.5,
+                  mb: 2.5,
+                  maxWidth: 560,
+                  mx: { xs: "auto", md: 0 },
+                  color: "text.secondary",
+                  fontSize: { xs: "15px", md: "17px" },
+                  lineHeight: 1.7,
+                }}
+              >
+                I build high-performance AR, VR, and multiplayer experiences for
+                mobile, web, and Meta Quest platforms, with a strong focus on
+                gameplay quality, networking stability, and real-world results.
+              </Typography>
+
               <TextRewriteSlide />
-              <SocialIcon />
-              <Box display={"none"}>
-                <Link href="/FullStack-Developer.pdf" target="_blank">
-                  <MUIButton>Download CV</MUIButton>
-                </Link>
+
+              <Box
+                sx={{
+                  mt: 2.5,
+                  display: "flex",
+                  gap: 1.5,
+                  justifyContent: { xs: "center", md: "flex-start" },
+                  flexWrap: "wrap",
+                }}
+              >
+                <Box component="a" href="#portfolio" sx={{ textDecoration: "none" }}>
+                  <MUIButton>View Portfolio</MUIButton>
+                </Box>
+                <Box component="a" href="#services" sx={{ textDecoration: "none" }}>
+                  <MUIButton>What I Do</MUIButton>
+                </Box>
+              </Box>
+
+              <Box sx={{ mt: 2.5 }}>
+                <SocialIcon />
               </Box>
             </Box>
           </Grid>
@@ -88,7 +125,7 @@ function HeroSection() {
             <Box
               sx={{
                 position: "relative",
-                maxWidth: { xs: 280, sm: 360, md: 420 },
+                maxWidth: { xs: 240, sm: 300, md: 340 },
                 mx: "auto",
               }}
             >
@@ -128,38 +165,6 @@ function HeroSection() {
             </Box>
           </Grid>
         </Grid>
-        <Box
-          component="span"
-          sx={{
-            position: "absolute",
-            top: 0,
-            zIndex: -1,
-            opacity: 0.03,
-            fontSize: "7rem",
-            fontFamily: "Caveat",
-            fontWeight: 800,
-            overflow: "hidden",
-            display: { md: "block", sm: "none", xs: "none" },
-          }}
-        >
-          Game Developer
-        </Box>
-        <Box
-          component="span"
-          sx={{
-            position: "absolute",
-            bottom: -20,
-            zIndex: -1,
-            opacity: 0.03,
-            fontSize: "7rem",
-            fontFamily: "Caveat",
-            fontWeight: 800,
-            overflow: "hidden",
-            display: { md: "block", sm: "none", xs: "none" },
-          }}
-        >
-          Unity Game Developer
-        </Box>
       </Container>
     </Box>
   );
