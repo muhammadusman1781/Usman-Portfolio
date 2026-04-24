@@ -60,6 +60,7 @@ export default function PortfolioSection() {
           {btn("VR")}
           {btn("AR")}
           {btn("Multiplayer")}
+          {btn("Board Games")}
           {btn("Hypercasual")}
           {btn("Educational")}
           {btn("Casino")}

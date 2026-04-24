@@ -18,11 +18,25 @@ const BEST_PROJECT_NAMES = [
   "Quess",
 ];
 
-const getShortDescription = (description?: string) => {
-  if (!description) return "Unity game project.";
-  const clean = description.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
-  if (!clean) return "Unity game project.";
-  return clean.length > 42 ? `${clean.slice(0, 39).trim()}...` : clean;
+const PROJECT_SUMMARY: Record<string, string> = {
+  "Tarneeb Masters": "Realtime multiplayer Tarneeb card game.",
+  "Aramco F1 Paddock": "AR F1 paddock experience for Aramco.",
+  "Markad Racing": "Multiplayer camel racing strategy game.",
+  "Battle Royale": "Multiplayer card battle arena game.",
+  "Kynect Game": "Educational multiplayer game experience.",
+  "Kaizilla P2E Game": "Multiplayer play-to-earn open world game.",
+  "Parchisking Game": "4 player custom rules board game.",
+  "Boat Merge Game": "Hypercasual merge and progression game.",
+  "Drift Car Parking": "Hypercasual drift and precision parking game.",
+  "Tap Fast": "Time-based sequence tapping challenge game.",
+  Quess: "4 player custom rules multiplayer chess game.",
+  Checkers: "4 player custom rules checkers game.",
+  Backgammon: "4 player custom rules backgammon game.",
+  "Killer Pool": "Realtime multiplayer pool with wallet integration.",
+  "VR Car": "VR car sensor and 3D graph demonstration.",
+  "Fire fighters StormStick": "VR storm stick firefighter training scenario.",
+  "Brandweer Training": "VR firefighter truck operation training system.",
+  "Star Burst Slot Game": "Casino-style single player slot game.",
 };
 
 export default function AllProjects({
@@ -82,7 +96,7 @@ export default function AllProjects({
                   minHeight: 20,
                 }}
               >
-                {getShortDescription(val.description)}
+                {PROJECT_SUMMARY[val.name] || "Unity game project."}
               </Typography>
             </CardContent>
             <CardActions sx={{ position: "relative", px: "30px" }}>
